@@ -17,11 +17,38 @@ window.onload = function(){
 
 //コンストラクタ
 function init(_args) {
-  //目次自動生成
-  createMokujiList({});
-  //content-footer生成
-  createContentFooter({});
+  //メインコンテンツ追加
+  createMainContents({
+    'callback':function(){
+      //目次自動生成
+      createMokujiList({});
+      //content-footer生成
+      createContentFooter({});
+    },
+  });
 };
+
+//メインコンテンツ追加
+function createMainContents(_args){
+  var _callback = _args.callback;
+  //コンテンツ用json読み込み
+  Convenience.getJsonData({
+    'jsonPath':'../json/wikiSample.json',
+    'callBack':function(json){
+      if (json.main) {
+        _.each(json.main, function(val, index) {
+          us.temp({
+            'type':'add',
+            'tempSelector':'#tempMainContent',
+            'addSelector':'#mainContentsWrapper',
+            'model':val,
+          });
+        });
+      }
+      _callback();//コールバック実行
+    },
+  })
+};//createMainContents
 
 //目次自動生成
 function createMokujiList(_args){

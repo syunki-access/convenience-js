@@ -81,7 +81,8 @@ access（アクセス）は、キーボーディスト浅倉大介とボーカ�
 </div><!-- main-text -->
 </div><!-- main-box -->
 
-
+<div id="mainContentsWrapper">
+</div><!-- mainContentsWrapper -->
 
 <div class="main-box contents" id="memberSec">
   <h2 class="title-text">メンバー</h2>
@@ -104,7 +105,7 @@ access（アクセス）は、キーボーディスト浅倉大介とボーカ�
 </div><!-- main-box -->
 
 
-<div class="main-box contents" id="unitNameSec">
+<div class="main-box contents" id="unitNameSec2">
   <h2 class="title-text">ユニット名の由来</h2>
 <div class="main-text">
 <p>
@@ -260,6 +261,19 @@ access（アクセス）は、キーボーディスト浅倉大介とボーカ�
   <span class="anker">▲ ページトップに戻る ▲</span>
 </div>
 </script><!-- tempContentFooter -->
+
+<script type="text/html" id="tempMainContent">
+<div class="main-box contents" id="<%= model.titleId %>">
+  <h2 class="title-text"><%= model.titleText %></h2>
+<div class="main-text">
+</div><!-- main-text -->
+</div><!-- main-box -->
+</script><!-- tempMainContent -->
+
+<script type="text/html" id="tempListContent">
+<ul class="list-unstyled <%= model.listClass %>">
+</ul>
+</script><!-- tempListContent -->
 
 <script src="../js/common/jquery.min.js"></script>
 <script src="../js/common/underscore-min.js"></script>
