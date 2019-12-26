@@ -1,6 +1,36 @@
 {
   "main":[
     {
+      "titleId":"memberSec",
+      "titleText":"メンバー",
+      "contents":[
+        {
+          "type":"subTitle",
+          "value":"浅倉大介"
+        },
+        {
+          "type":"list",
+          "listClass":"other-link",
+          "value":[
+            "キーボード",
+            "作曲、編曲、プロデュース"
+          ]
+        },
+        {
+          "type":"subTitle",
+          "value":"貴水博之"
+        },
+        {
+          "type":"list",
+          "listClass":"other-link",
+          "value":[
+            "ボーカル",
+            "作詞"
+          ]
+        }
+      ]
+    },
+    {
       "titleId":"unitNameSec",
       "titleText":"ユニット名の由来",
       "contents":[

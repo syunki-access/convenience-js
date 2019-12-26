@@ -32,8 +32,9 @@ function init(_args) {
 function createMainContents(_args){
   var _callback = _args.callback;
   //コンテンツ用json読み込み
+  var _jsonPath = '../json/wikiSample.json';
   Convenience.getJsonData({
-    'jsonPath':'../json/wikiSample.json',
+    'jsonPath':_jsonPath,
     'callBack':function(json){
       if (json.main) {
         _.each(json.main, function(val, index) {
@@ -68,7 +69,40 @@ function createContentsHTML(_args) {
         'model':val,
       });
     }else if(val.type == 'list'){
-      
+      var __listId = 'list'+index;
+      us.temp({
+        'type':'add',
+        'tempSelector':'#tempListContent',
+        'addSelector':_addSelector,
+        'model':{
+          "listClass":val.listClass,
+          "listId":__listId,
+        },
+      });
+      _.each(val.value, function(listVal, listIndex) {
+        us.temp({
+          'type':'add',
+          'tempSelector':'#tempListTag',
+          'addSelector':_addSelector+' .'+__listId,
+          'model':{
+            'value':listVal,
+          },
+        });
+      });
+    }else if(val.type == 'subTitle'){
+      us.temp({
+        'type':'add',
+        'tempSelector':'#tempSubTitleContent',
+        'addSelector':_addSelector,
+        'model':val,
+      });
+    }else if(val.type == 'categoryTitle'){
+      us.temp({
+        'type':'add',
+        'tempSelector':'#tempCategoryTitleContent',
+        'addSelector':_addSelector,
+        'model':val,
+      });
     }
   });
 }//createContentsHTML

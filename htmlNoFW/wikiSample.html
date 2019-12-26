@@ -81,39 +81,10 @@ access（アクセス）は、キーボーディスト浅倉大介とボーカ�
 </div><!-- main-text -->
 </div><!-- main-box -->
 
+
+<!-- メインコンテンツ -->
 <div id="mainContentsWrapper">
 </div><!-- mainContentsWrapper -->
-
-<div class="main-box contents" id="memberSec">
-  <h2 class="title-text">メンバー</h2>
-<div class="main-text">
-<h3 class="subtitle-text">
-浅倉大介
-</h3>
-<ul class="list-unstyled other-link">
-  <li>キーボード</li>
-  <li>作曲、編曲、プロデュース</li>
-</ul>
-<h3 class="subtitle-text">
-貴水博之
-</h3>
-<ul class="list-unstyled other-link">
-  <li>ボーカル</li>
-  <li>作詞</li>
-</ul>
-</div><!-- main-text -->
-</div><!-- main-box -->
-
-
-<div class="main-box contents" id="unitNameSec2">
-  <h2 class="title-text">ユニット名の由来</h2>
-<div class="main-text">
-<p>
-音楽を通じてファンと接触したいという気持ちと、コンピュータ用語のアクセスをかけあわせた名前。「英語のワンワードでコンピュータに関連した名前」という浅倉の意向に合ったこともありaccessと命名された。50音でもアルファベットでも一番先頭にきやすいというのも理由の1つ。略表記は「<em>AXS</em>」。
-</p>
-</div><!-- main-text -->
-</div><!-- main-box -->
-
 
 
 <!-- サンプルテンプレート -->
@@ -274,10 +245,22 @@ access（アクセス）は、キーボーディスト浅倉大介とボーカ�
 <p><%= model.value %></p>
 </script><!-- tempTextContent -->
 
+<script type="text/html" id="tempSubTitleContent">
+<h3 class="subtitle-text"><%= model.value %></h3>
+</script><!-- tempSubTitleContent -->
+
+<script type="text/html" id="tempCategoryTitleContent">
+<h4 class="categorye-text"><%= model.value %></h4>
+</script><!-- tempCategoryTitleContent -->
+
 <script type="text/html" id="tempListContent">
-<ul class="list-unstyled <%= model.listClass %>">
+<ul class="list-unstyled <%= model.listClass %> <%= model.listId %>">
 </ul>
 </script><!-- tempListContent -->
+
+<script type="text/html" id="tempListTag">
+<li><%= model.value %></li>
+</script><!-- tempListTag -->
 
 <script src="../js/common/jquery.min.js"></script>
 <script src="../js/common/underscore-min.js"></script>
