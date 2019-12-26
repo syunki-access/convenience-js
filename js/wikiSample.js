@@ -43,12 +43,36 @@ function createMainContents(_args){
             'addSelector':'#mainContentsWrapper',
             'model':val,
           });
+          createContentsHTML({
+            'contents':val.contents,
+            'addSelector':'#'+val.titleId,
+          });
         });
       }
       _callback();//コールバック実行
     },
   })
 };//createMainContents
+
+//各コンテンツHTMLを生成する
+function createContentsHTML(_args) {
+  var _contents = _args.contents;
+  var _addSelector = _args.addSelector
+  _addSelector = _addSelector+' .main-text';
+  _.each(_contents, function(val, index) {
+    if(val.type == 'text'){
+      us.temp({
+        'type':'add',
+        'tempSelector':'#tempTextContent',
+        'addSelector':_addSelector,
+        'model':val,
+      });
+    }else if(val.type == 'list'){
+      
+    }
+  });
+}//createContentsHTML
+
 
 //目次自動生成
 function createMokujiList(_args){
