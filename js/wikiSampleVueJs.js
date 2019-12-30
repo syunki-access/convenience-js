@@ -22,8 +22,6 @@ function init(_args) {
     'callback':function(){
       //目次自動生成
       createMokujiList({});
-      //content-footer生成
-      createContentFooter({});
     },
   });
 };
@@ -40,6 +38,13 @@ function createMainContents(_args){
         new Vue({
           'el':'#mainContentsWrapper',
           'data':json,
+          'methods':{
+            'toPageTop':function(){
+              moveInnerPage({
+                'inner_id':'#header',
+              });
+            },
+          },
         });
       }
       //_callback();//コールバック実行
@@ -70,26 +75,6 @@ function createMokujiList(_args){
     });
   });
 };//createMokujiList
-
-//content-footer生成
-function createContentFooter(_args){
-  $('.contents').each(function(index, elem){
-    us.temp({
-      'type':'add',
-      'tempSelector':'#tempContentFooter',
-      'addSelector':'#'+$(elem).attr('id'),
-      'model':{},
-    });
-    tem.addEvent({
-      'selector':'.content-footer .anker',
-      'func':function() {
-        moveInnerPage({
-          'inner_id':'#header',
-        });
-      },
-    });
-  });
-};//createContentFooter
 
 //ページ内リンク
 function moveInnerPage(_args){
