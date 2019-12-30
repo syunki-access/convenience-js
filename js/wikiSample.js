@@ -130,8 +130,16 @@ function createContentsHTML(_args) {
             'addSelector':_addSelector+' .'+__tableId+' tbody .tr'+tableIndex,
             'model':{
               'value':listVal,
+              'tdId':'td'+listIndex,
             },
           });
+          //属性変更対応 配列に存在するものだけ適用
+          if(tableVal.tdAttribute && tableVal.tdAttribute[listIndex]){
+            var __selector = _addSelector+' .'+__tableId+' tbody .tr'+tableIndex+' .td'+listIndex;
+            var __attr = tableVal.tdAttribute[listIndex].attr;
+            var __value = tableVal.tdAttribute[listIndex].value;
+            $(__selector).attr(__attr, __value);
+          }
         });
       });
     };

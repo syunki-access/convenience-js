@@ -269,6 +269,187 @@
         {
           "type":"categoryTitle",
           "value":"リミックスシングル"
+        },
+        {
+          "type":"table",
+          "value":[
+            {
+              "trClass":"table-title",
+              "tdTemplate":"tempTableTagTh",
+              "list":[
+                "",
+                "発売日",
+                "タイトル",
+                "最高位"
+              ]
+            },
+            {
+              "trClass":"",
+              "tdTemplate":"tempTableTagTd",
+              "list":[
+                "1st",
+                "1994年5月8日",
+                "MISTY HEARTBREAK Re-SYNC STYLE",
+                "12位"
+              ]
+            },
+            {
+              "trClass":"",
+              "tdTemplate":"tempTableTagTd",
+              "list":[
+                "2nd",
+                "1994年8月25日",
+                "DRASTIC MERMAID Re-SYNC STYLE",
+                "12位"
+              ]
+            },
+            {
+              "trClass":"",
+              "tdTemplate":"tempTableTagTd",
+              "list":[
+                "3rd",
+                "1994年11月2日",
+                "SCANDALOUS BLUE Re-SYNC STYLE",
+                "10位"
+              ]
+            },
+            {
+              "trClass":"",
+              "tdTemplate":"tempTableTagTd",
+              "list":[
+                "4th",
+                "1994年12月14日",
+                "TEAR'S LIBERATION Re-SYNC STYLE",
+                "19位"
+              ]
+            }
+          ]
+        },
+        {
+          "type":"subTitle",
+          "value":"アルバム"
+        },
+        {
+          "type":"table",
+          "value":[
+            {
+              "trClass":"table-title",
+              "tdTemplate":"tempTableTagTh",
+              "list":[
+                "",
+                "発売日",
+                "タイトル",
+                "最高位"
+              ]
+            },
+            {
+              "trClass":"",
+              "tdTemplate":"tempTableTagTd",
+              "list":[
+                "1st",
+                "1993年2月25日",
+                "FAST ACCESS",
+                "2位"
+              ]
+            },
+            {
+              "trClass":"",
+              "tdTemplate":"tempTableTagTd",
+              "list":[
+                "2nd",
+                "1993年9月22日",
+                "ACCESS II",
+                "2位"
+              ]
+            },
+            {
+              "trClass":"",
+              "tdTemplate":"tempTableTagTd",
+              "list":[
+                "3rd",
+                "1994年5月25日",
+                "DELICATE PLANET",
+                "1位"
+              ]
+            }
+          ]
+        },
+        {
+          "type":"categoryTitle",
+          "value":"ベストアルバム"
+        },
+        {
+          "type":"table",
+          "value":[
+            {
+              "trClass":"table-title",
+              "tdTemplate":"tempTableTagTh",
+              "list":[
+                "発売日",
+                "タイトル",
+                "最高位"
+              ]
+            },
+            {
+              "trClass":"",
+              "tdTemplate":"tempTableTagTd",
+              "list":[
+                "1995年10月1日",
+                "AXS SINGLE TRACKS",
+                "6位"
+              ]
+            },
+            {
+              "trClass":"",
+              "tdTemplate":"tempTableTagTd",
+              "list":[
+                "1998年6月24日",
+                "SEQUENCE MEDITATION 〜超電導思考回路〜",
+                "57位"
+              ]
+            }
+          ]
+        },
+        {
+          "type":"categoryTitle",
+          "value":"ライブアルバム"
+        },
+        {
+          "type":"table",
+          "value":[
+            {
+              "trClass":"table-title",
+              "tdTemplate":"tempTableTagTh",
+              "list":[
+                "発売日",
+                "タイトル",
+                "最高位"
+              ]
+            },
+            {
+              "trClass":"",
+              "tdTemplate":"tempTableTagTd",
+              "tdAttribute":[
+                {
+                  "attr":"rowspan",
+                  "value":"2"
+                }
+              ],
+              "list":[
+                "1995年3月15日",
+                "LIVE ZEROS SYNC-ACROSS JAPAN TOUR '93-'94",
+                "4位"
+              ]
+            },
+            {
+              "trClass":"",
+              "tdTemplate":"tempTableTagTd",
+              "list":[
+                "LIVE ONES SYNC-ACROSS JAPAN TOUR '93-'94",
+                "5位"
+              ]
+            }
+          ]
         }
       ]
     }
