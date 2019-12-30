@@ -84,13 +84,61 @@ access（アクセス）は、キーボーディスト浅倉大介とボーカ�
 
 <!-- メインコンテンツ -->
 <div id="mainContentsWrapper">
+<!-- template:main -->
 <template v-for="model in main">
-<div class="main-box contents" id="{{ model.titleId }}">
+<div class="main-box contents" v-bind:id="model.titleId">
   <h2 class="title-text">{{ model.titleText }}</h2>
 <div class="main-text">
+<!-- template:content -->
+<template v-for="content in model.contents">
+
+<!-- template:text -->
+<template v-if="content.type == 'text'">
+<p v-html="content.value"></p>
+</template><!-- text -->
+
+<!-- template:subTitle -->
+<template v-if="content.type == 'subTitle'">
+<h3 class="subtitle-text" v-html="content.value"></h3>
+</template><!-- subTitle -->
+
+<!-- template:categoryTitle -->
+<template v-if="content.type == 'categoryTitle'">
+<h4 class="categorye-text" v-html="content.value"></h4>
+</template><!-- categoryTitle -->
+
+<!-- template:list -->
+<template v-if="content.type == 'list'">
+<ul class="list-unstyled" v-bind:class="content.listClass">
+  <li v-for="contentValue in content.value" v-html="contentValue"></li>
+</ul>
+</template><!-- list -->
+
+<!-- template:table -->
+<template v-if="content.type == 'table'">
+<table class="table table-bordered">
+<tbody>
+<template v-for="contentValue in content.value">
+  <tr v-bind:class="contentValue.trClass">
+    <template v-if="contentValue.tdTemplate == 'tempTableTagTh'">
+    <th v-for="listValue in contentValue.list" v-html="listValue"></th>
+    </template>
+    <template v-if="contentValue.tdTemplate == 'tempTableTagTd'">
+    <td v-for="listValue in contentValue.list" v-html="listValue"></td>
+    </template>
+  </tr>
+</template><!-- contentValue -->
+</tbody>
+</table>
+</template><!-- table -->
+
+</template><!-- content -->
 </div><!-- main-text -->
+<div class="content-footer">
+  <span class="anker">▲ ページトップに戻る ▲</span>
+</div>
 </div><!-- main-box -->
-</template>
+</template><!-- main -->
 </div><!-- mainContentsWrapper -->
 
 
@@ -225,17 +273,6 @@ access（アクセス）は、キーボーディスト浅倉大介とボーカ�
 
 
 <!------ 以下Vue.js用template定義 ------>
-<script type="text/x-template" id="tempMokujiList">
-
-</script><!-- tempMokujiList -->
-
-<script type="text/x-template" id="tempContentFooter">
-
-</script><!-- tempContentFooter -->
-
-
-
-
 <script type="text/html" id="tempMokujiList">
 <li>
 <span class="anker" id="mokuji_<%= model.innerId %>">
@@ -244,60 +281,6 @@ access（アクセス）は、キーボーディスト浅倉大介とボーカ�
 </span>
 </li>
 </script><!-- tempMokujiList -->
-
-<script type="text/html" id="tempContentFooter">
-<div class="content-footer">
-  <span class="anker">▲ ページトップに戻る ▲</span>
-</div>
-</script><!-- tempContentFooter -->
-
-<script type="text/html" id="tempMainContent">
-<div class="main-box contents" id="<%= model.titleId %>">
-  <h2 class="title-text"><%= model.titleText %></h2>
-<div class="main-text">
-</div><!-- main-text -->
-</div><!-- main-box -->
-</script><!-- tempMainContent -->
-
-<script type="text/html" id="tempTextContent">
-<p><%= model.value %></p>
-</script><!-- tempTextContent -->
-
-<script type="text/html" id="tempSubTitleContent">
-<h3 class="subtitle-text"><%= model.value %></h3>
-</script><!-- tempSubTitleContent -->
-
-<script type="text/html" id="tempCategoryTitleContent">
-<h4 class="categorye-text"><%= model.value %></h4>
-</script><!-- tempCategoryTitleContent -->
-
-<script type="text/html" id="tempListContent">
-<ul class="list-unstyled <%= model.listClass %> <%= model.listId %>">
-</ul>
-</script><!-- tempListContent -->
-
-<script type="text/html" id="tempListTag">
-<li><%= model.value %></li>
-</script><!-- tempListTag -->
-
-<script type="text/html" id="tempTableContent">
-<table class="table table-bordered <%= model.tableId %>">
-<tbody>
-</tbody>
-</table>
-</script><!-- tempTableContent -->
-
-<script type="text/html" id="tempTableTagTr">
-<tr class="<%= model.trClass %> <%= model.trId %>"></tr>
-</script><!-- tempTableTagTr -->
-
-<script type="text/html" id="tempTableTagTd">
-<td class="<%= model.tdId %>"><%= model.value %></td>
-</script><!-- tempTableTagTd -->
-
-<script type="text/html" id="tempTableTagTh">
-<th class="<%= model.tdId %>"><%= model.value %></th>
-</script><!-- tempTableTagTh -->
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="../js/common/jquery.min.js"></script>

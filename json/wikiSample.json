@@ -429,12 +429,6 @@
             {
               "trClass":"",
               "tdTemplate":"tempTableTagTd",
-              "tdAttribute":[
-                {
-                  "attr":"rowspan",
-                  "value":"2"
-                }
-              ],
               "list":[
                 "1995年3月15日",
                 "LIVE ZEROS SYNC-ACROSS JAPAN TOUR '93-'94",
@@ -445,6 +439,7 @@
               "trClass":"",
               "tdTemplate":"tempTableTagTd",
               "list":[
+                "1995年3月15日",
                 "LIVE ONES SYNC-ACROSS JAPAN TOUR '93-'94",
                 "5位"
               ]
