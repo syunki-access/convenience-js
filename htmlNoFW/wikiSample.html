@@ -262,6 +262,25 @@ access（アクセス）は、キーボーディスト浅倉大介とボーカ�
 <li><%= model.value %></li>
 </script><!-- tempListTag -->
 
+<script type="text/html" id="tempTableContent">
+<table class="table table-bordered <%= model.tableId %>">
+<tbody>
+</tbody>
+</table>
+</script><!-- tempTableContent -->
+
+<script type="text/html" id="tempTableTagTr">
+<tr class="<%= model.trClass %> <%= model.trId %>"></tr>
+</script><!-- tempTableTagTr -->
+
+<script type="text/html" id="tempTableTagTd">
+<td><%= model.value %></td>
+</script><!-- tempTableTagTd -->
+
+<script type="text/html" id="tempTableTagTh">
+<th><%= model.value %></th>
+</script><!-- tempTableTagTh -->
+
 <script src="../js/common/jquery.min.js"></script>
 <script src="../js/common/underscore-min.js"></script>
 <script src="../js/common/convenience.js"></script>

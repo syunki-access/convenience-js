@@ -103,7 +103,38 @@ function createContentsHTML(_args) {
         'addSelector':_addSelector,
         'model':val,
       });
-    }
+    }else if(val.type == 'table'){
+      var __tableId = 'table'+index;
+      us.temp({
+        'type':'add',
+        'tempSelector':'#tempTableContent',
+        'addSelector':_addSelector,
+        'model':{
+          "tableId":__tableId,
+        },
+      });
+      _.each(val.value, function(tableVal, tableIndex) {
+        us.temp({
+          'type':'add',
+          'tempSelector':'#tempTableTagTr',
+          'addSelector':_addSelector+' .'+__tableId+' tbody',
+          'model':{
+            'trClass':tableVal.trClass,
+            'trId':'tr'+tableIndex,
+          },
+        });
+        _.each(tableVal.list, function(listVal, listIndex) {
+          us.temp({
+            'type':'add',
+            'tempSelector':'#'+tableVal.tdTemplate,
+            'addSelector':_addSelector+' .'+__tableId+' tbody .tr'+tableIndex,
+            'model':{
+              'value':listVal,
+            },
+          });
+        });
+      });
+    };
   });
 }//createContentsHTML
 
