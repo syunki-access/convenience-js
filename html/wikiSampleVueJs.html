@@ -75,6 +75,14 @@ access（アクセス）は、キーボーディスト浅倉大介とボーカ�
 <div class="mokuji-list">
   <h2>目次</h2>
   <ul id="mokujiListUl">
+<template v-for="model in mokuji">
+  <li v-scroll-to="'#'+model.innerId">
+  <span class="anker" v-bind:id="'mokuji_'+model.innerId">
+  <span class="tocnumber" v-html="model.index+'.'"></span>
+  <span class="toctext" v-html="model.text"></span>
+  </span>
+  </li>
+</template><!-- for:mokuji -->
   </ul>
 </div><!-- mokuji-list -->
 
@@ -274,12 +282,7 @@ access（アクセス）は、キーボーディスト浅倉大介とボーカ�
 
 <!------ 以下Vue.js用template定義 ------>
 <script type="text/html" id="tempMokujiList">
-<li>
-<span class="anker" id="mokuji_<%= model.innerId %>">
-<span class="tocnumber"><%= model.index %>.</span>
-<span class="toctext"><%= model.text %></span>
-</span>
-</li>
+
 </script><!-- tempMokujiList -->
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>

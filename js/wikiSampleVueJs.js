@@ -35,42 +35,42 @@ function init(_args) {
 //メインコンテンツ追加
 function createMainContents(_args){
   var _callback = _args.callback;
+  //Vueインスタンス生成
+  var _vm = new Vue({
+    'el':'#mainContentsWrapper',
+    'data':{
+      'main':[],
+    },
+  });
   //コンテンツ用json読み込み
   var _jsonPath = '../json/wikiSample.json';
   Convenience.getJsonData({
     'jsonPath':_jsonPath,
     'callBack':function(json){
-      if (json.main) {
-        new Vue({
-          'el':'#mainContentsWrapper',
-          'data':json,
-        });
-      }
-      //_callback();//コールバック実行
+      if (json) {
+        _vm.main = json.main;
+      };
+      _vm.$nextTick(function(){
+        _callback();//コールバック実行
+      });
     },
   })
 };//createMainContents
 
 //目次自動生成
 function createMokujiList(_args){
+  var _mokujiData = [];
   $('.contents').each(function(index, elem){
-    us.temp({
-      'type':'add',
-      'tempSelector':'#tempMokujiList',
-      'addSelector':'#mokujiListUl',
-      'model':{
-        'innerId':$(elem).attr('id'),
-        'index':index+1,
-        'text':$(elem).find('.title-text').text(),
-      },
+    _mokujiData.push({
+      'innerId':$(elem).attr('id'),
+      'index':index+1,
+      'text':$(elem).find('.title-text').text(),
     });
-    tem.addEvent({
-      'selector':'#mokuji_'+$(elem).attr('id'),
-      'func':function() {
-        moveInnerPage({
-          'inner_id':'#'+$(elem).attr('id'),
-        });
-      },
-    });
+  });
+  new Vue({
+    'el':'#mokujiListUl',
+    'data':{
+      'mokuji':_mokujiData,
+    },
   });
 };//createMokujiList
