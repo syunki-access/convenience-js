@@ -18,9 +18,13 @@
 
 <!-- トップ -->
 <div class="main-box">
-<h2 class="title-text"></h2>
+<div id="titleText">
+<h2 class="title-text" v-html="titleText"></h2>
+</div><!-- titleText -->
 <div class="main-text">
-<p></p>
+<div id="descriptionText">
+<p v-html="descriptionText"></p>
+</div><!-- descriptionText -->
 
 <!-- gcard -->
 <div class="infobox gcard proflist">

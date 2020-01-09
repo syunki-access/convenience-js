@@ -52,11 +52,22 @@ function init(_args) {
 
 //Vueインスタンス生成
 function createVueInstance(_args){
-  //Vueインスタンス生成
   _vi.mainContents = new Vue({
     'el':'#mainContentsWrapper',
     'data':{
       'main':[],
+    },
+  });
+  _vi.titleText = new Vue({
+    'el':'#titleText',
+    'data':{
+      'titleText':'',
+    },
+  });
+  _vi.descriptionText = new Vue({
+    'el':'#descriptionText',
+    'data':{
+      'descriptionText':'',
     },
   });
 };
@@ -89,7 +100,8 @@ function createMainContents(_args){
 //ヘッダーコンテンツ追加
 function createHeaderContents(_args){
   var _data = _args.data;
-  console.log('_data', _data);
+  _vi.titleText.titleText = _data.header.titleText;
+  _vi.descriptionText.descriptionText = _data.header.descriptionText;
 };//createHeaderContents
 
 //目次自動生成
