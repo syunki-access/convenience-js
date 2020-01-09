@@ -4,6 +4,9 @@ var lm;
 var us;
 var te;
 
+//Vue用インスタンス
+var _vi = {};
+
 //処理開始
 window.onload = function(){
   //共通変数一覧
@@ -23,39 +26,71 @@ window.onload = function(){
 
 //コンストラクタ
 function init(_args) {
-  //メインコンテンツ追加
-  createMainContents({
-    'callback':function(){
-      //目次自動生成
-      createMokujiList({});
+  //Vueインスタンス生成
+  createVueInstance({});
+  //ページデータ読込
+  getPageData({
+    'callback':function(_args){
+      __callback(_args)
+    },
+  });
+  function __callback(_args){
+    //ヘッダーコンテンツ追加
+    createHeaderContents({
+      'data':_args.data,
+    });
+    //メインコンテンツ追加
+    createMainContents({
+      'data':_args.data,
+      'callback':function(){
+        //目次自動生成
+        createMokujiList({});
+      },
+    });
+  };
+};
+
+//Vueインスタンス生成
+function createVueInstance(_args){
+  //Vueインスタンス生成
+  _vi.mainContents = new Vue({
+    'el':'#mainContentsWrapper',
+    'data':{
+      'main':[],
+    },
+  });
+};
+
+//ページデータ読込
+function getPageData(_args){
+  var _callback = _args.callback;
+  //コンテンツ用json読み込み
+  var _jsonPath = '../json/wikiSample.json';
+  Convenience.getJsonData({
+    'jsonPath':_jsonPath,
+    'callBack':function(json){
+      _callback({
+        'data':json,
+      });
     },
   });
 };
 
 //メインコンテンツ追加
 function createMainContents(_args){
+  var _data = _args.data;
   var _callback = _args.callback;
-  //Vueインスタンス生成
-  var _vm = new Vue({
-    'el':'#mainContentsWrapper',
-    'data':{
-      'main':[],
-    },
+  _vi.mainContents.main = _data.main;
+  _vi.mainContents.$nextTick(function(){
+    _callback();//コールバック実行
   });
-  //コンテンツ用json読み込み
-  var _jsonPath = '../json/wikiSample.json';
-  Convenience.getJsonData({
-    'jsonPath':_jsonPath,
-    'callBack':function(json){
-      if (json) {
-        _vm.main = json.main;
-      };
-      _vm.$nextTick(function(){
-        _callback();//コールバック実行
-      });
-    },
-  })
 };//createMainContents
+
+//ヘッダーコンテンツ追加
+function createHeaderContents(_args){
+  var _data = _args.data;
+  console.log('_data', _data);
+};//createHeaderContents
 
 //目次自動生成
 function createMokujiList(_args){
