@@ -11,6 +11,12 @@ window.onload = function(){
   lm = new Convenience.linkManager(); //リンクモジュール
   us = new Convenience.underscoreFunc(); //underscore.jsまとめ
   te = Convenience.te;
+  
+  //Vueプラグイン起動
+  Vue.use(VueScrollTo, {
+    container:'body',
+  });
+  
   //起動
   init({});
 };
@@ -38,13 +44,6 @@ function createMainContents(_args){
         new Vue({
           'el':'#mainContentsWrapper',
           'data':json,
-          'methods':{
-            'toPageTop':function(){
-              moveInnerPage({
-                'inner_id':'#header',
-              });
-            },
-          },
         });
       }
       //_callback();//コールバック実行
@@ -75,9 +74,3 @@ function createMokujiList(_args){
     });
   });
 };//createMokujiList
-
-//ページ内リンク
-function moveInnerPage(_args){
-  var _inner_id = _args.inner_id;
-  $('html,body').animate({ scrollTop:$(_inner_id).offset().top-20 }, 'fast');
-};
