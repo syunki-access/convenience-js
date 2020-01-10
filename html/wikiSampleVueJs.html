@@ -22,9 +22,6 @@
 <h2 class="title-text" v-html="titleText"></h2>
 </div><!-- titleText -->
 <div class="main-text">
-<div id="descriptionText">
-<p v-html="descriptionText"></p>
-</div><!-- descriptionText -->
 
 <!-- gcard -->
 <div class="infobox gcard proflist">
@@ -68,6 +65,10 @@
 </table>
   </div><!-- description -->
 </div><!-- gcard -->
+
+<div id="descriptionText">
+<p v-html="descriptionText"></p>
+</div><!-- descriptionText -->
 
 <!-- 目次 -->
 <!-- 
@@ -280,11 +281,6 @@
 <div id="footer">
 </div><!-- footer -->
 
-
-<!------ 以下Vue.js用template定義 ------>
-<script type="text/html" id="tempMokujiList">
-
-</script><!-- tempMokujiList -->
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue-scrollto"></script>
