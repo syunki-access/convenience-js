@@ -39,6 +39,10 @@ function init(_args) {
     createHeaderContents({
       'data':_args.data,
     });
+    //プロフィールコンテンツ追加
+    createProfileContents({
+      'data':_args.data,
+    });
     //メインコンテンツ追加
     createMainContents({
       'data':_args.data,
@@ -68,6 +72,16 @@ function createVueInstance(_args){
     'el':'#descriptionText',
     'data':{
       'descriptionText':'',
+    },
+  });
+  _vi.proflist = new Vue({
+    'el':'#proflist',
+    'data':{
+      'proflist':{
+        'name':'',
+        'profImg':'../img/no-img.png',
+        'list':[],
+      },
     },
   });
 };
@@ -103,6 +117,12 @@ function createHeaderContents(_args){
   _vi.titleText.titleText = _data.header.titleText;
   _vi.descriptionText.descriptionText = _data.header.descriptionText;
 };//createHeaderContents
+
+//プロフィールコンテンツ追加
+function createProfileContents(_args){
+  var _data = _args.data;
+  _vi.proflist.proflist = _data.proflist;
+};//createProfileContents
 
 //目次自動生成
 function createMokujiList(_args){

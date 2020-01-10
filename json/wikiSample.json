@@ -3,6 +3,32 @@
     "titleText":"access (音楽ユニット)",
     "descriptionText":"access（アクセス）は、キーボーディスト浅倉大介とボーカリスト貴水博之による日本の音楽ユニット。1992年にデビュー。1995年より活動を休止するが2002年に活動再開。所属レーベルはSony Music Associated Records。所属事務所はDarwin（浅倉）、Guan Barl（貴水）。"
   },
+  "proflist":{
+    "name":"access",
+    "profImg":"../img/TEAR'S LIBERATION.jpg",
+    "list":[
+      [
+        "別名",
+        "AXS"
+      ],
+      [
+        "ジャンル",
+        "J-POP"
+      ],
+      [
+        "活動期間",
+        "1992年 - 1995年<br>2002年 -"
+      ],
+      [
+        "<hr>",
+        "<hr>"
+      ],
+      [
+        "メンバー",
+        "浅倉大介（キーボード）<br>貴水博之（ボーカル）"
+      ]
+    ]
+  },
   "main":[
     {
       "titleId":"memberSec",
