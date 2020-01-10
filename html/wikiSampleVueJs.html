@@ -32,14 +32,14 @@
   <div class="description">
 <table>
   <tbody>
-<template v-for="value1 in proflist.list">
+<template v-for="model1 in proflist.list">
   <tr>
-  <template v-for="(value2, index) in value1">
+  <template v-for="(model2, index) in model1">
     <template v-if="index==0">
-    <th v-html="value2"></th>
+    <th v-html="model2"></th>
     </template><!-- v-if -->
     <template v-else>
-    <td v-html="value2"></td>
+    <td v-html="model2"></td>
     </template><!-- v-else -->
   </template><!-- for:list -->
   </tr>
