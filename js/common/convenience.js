@@ -311,7 +311,14 @@ function convenienceCollection(){
     });
     _parameter = _parameter.replace('&', '');
     return _parameter;
-  }//modalWindowOpen
+  }//convertGetParameter
+  
+  //URLからクエリパラメータ削除
+  _common.deleteURLParameter = function(_args){
+    var _url_org = _args.url;
+    var _url = _url_org.replace(/\?.*$/,"");
+    return _url;
+  }//deleteURLParameter
   
   //カウントダウン関数
   //currentTime, endTime は必ず「 0000/00/00 00:00:00 」の形式にする
