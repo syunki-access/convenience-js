@@ -314,7 +314,7 @@ function convenienceCollection(){
   }//convertGetParameter
   
   //URLからクエリパラメータ削除
-  _common.deleteURLParameter = function(_args){
+  _convenience.deleteURLParameter = function(_args){
     var _url_org = _args.url;
     var _url = _url_org.replace(/\?.*$/,"");
     return _url;
