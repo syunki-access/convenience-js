@@ -22,11 +22,9 @@
 <div class="main-text">
 
 <!-- gcard -->
-<div class="infobox gcard proflist">
-  <div class="name">
-    <h3>access</h3>
-  </div>
-  <img class="img-responsive prof-img" src="../img/TEAR'S LIBERATION.jpg">
+<div id="profList" class="infobox gcard proflist">
+  <div id="profListName" class="name"></div>
+  <div id="profListImg"></div>
   <div class="description">
 <table>
   <tbody>
@@ -223,6 +221,14 @@
 <script type="text/html" id="tempDescriptionText">
 <%= model.descriptionText %>
 </script><!-- tempDescriptionText -->
+
+<script type="text/html" id="tempProflistName">
+<h3><%= model.name %></h3>
+</script><!-- tempProflistName -->
+
+<script type="text/html" id="tempProflistImg">
+<img class="img-responsive prof-img" src="<%= model.profImg %>">
+</script><!-- tempProflistImg -->
 
 <script type="text/html" id="tempMokujiList">
 <li>

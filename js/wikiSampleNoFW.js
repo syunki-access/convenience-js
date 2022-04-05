@@ -56,6 +56,26 @@ function createMainContents(_args){
           });
         });
       };
+      //プロフィール入れ込み
+      if(json.proflist){
+        _.each([
+          {
+            'tempSelector':'#tempProflistName',
+            'addSelector':'#profListName',
+          },
+          {
+            'tempSelector':'#tempProflistImg',
+            'addSelector':'#profListImg',
+          },
+        ], function(val, index) {
+          us.temp({
+            'type':'add',
+            'tempSelector':val.tempSelector,
+            'addSelector':val.addSelector,
+            'model':json.proflist,
+          });
+        });
+      };
       //メインコンテンツ入れ込み
       if (json.main) {
         _.each(json.main, function(val, index) {
