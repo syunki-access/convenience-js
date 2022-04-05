@@ -18,7 +18,7 @@
 
 <!-- トップ -->
 <div class="main-box">
-  <h2 class="title-text">access (音楽ユニット)</h2>
+  <h2 id="titleText" class="title-text"></h2>
 <div class="main-text">
 
 <!-- gcard -->
@@ -64,9 +64,7 @@
   </div><!-- description -->
 </div><!-- gcard -->
 
-<p>
-access（アクセス）は、キーボーディスト浅倉大介とボーカリスト貴水博之による日本の音楽ユニット。1992年にデビュー。1995年より活動を休止するが2002年に活動再開。所属レーベルはSony Music Associated Records。所属事務所はDarwin（浅倉）、Guan Barl（貴水）。
-</p>
+<p id="descriptionText"></p>
 
 <!-- 目次 -->
 <!-- 
@@ -218,6 +216,14 @@ access（アクセス）は、キーボーディスト浅倉大介とボーカ�
 
 
 <!------ 以下動的template定義 ------>
+<script type="text/html" id="tempTitleText">
+<%= model.titleText %>
+</script><!-- tempTitleText -->
+
+<script type="text/html" id="tempDescriptionText">
+<%= model.descriptionText %>
+</script><!-- tempDescriptionText -->
+
 <script type="text/html" id="tempMokujiList">
 <li>
 <span class="anker" id="mokuji_<%= model.innerId %>">

@@ -36,6 +36,27 @@ function createMainContents(_args){
   Convenience.getJsonData({
     'jsonPath':_jsonPath,
     'callBack':function(json){
+      //タイトル・説明文入れ込み
+      if(json.header){
+        _.each([
+          {
+            'tempSelector':'#tempTitleText',
+            'addSelector':'#titleText',
+          },
+          {
+            'tempSelector':'#tempDescriptionText',
+            'addSelector':'#descriptionText',
+          },
+        ], function(val, index) {
+          us.temp({
+            'type':'add',
+            'tempSelector':val.tempSelector,
+            'addSelector':val.addSelector,
+            'model':json.header,
+          });
+        });
+      };
+      //メインコンテンツ入れ込み
       if (json.main) {
         _.each(json.main, function(val, index) {
           us.temp({
