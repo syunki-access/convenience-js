@@ -17,14 +17,17 @@ window.onload = function(){
 
 //コンストラクタ
 function init(_args) {
-  //メインコンテンツ追加
-  createMainContents({
-    'callback':function(){
-      //目次自動生成
-      createMokujiList({});
-      //content-footer生成
-      createContentFooter({});
-    },
+  //template読み込み
+  $('#template').load('./common/tagTemplate.html', function(){
+    //メインコンテンツ追加
+    createMainContents({
+      'callback':function(){
+        //目次自動生成
+        createMokujiList({});
+        //content-footer生成
+        createContentFooter({});
+      },
+    });
   });
 };
 

@@ -1,0 +1,88 @@
+
+<!------ 以下動的template定義 ------>
+<script type="text/html" id="tempTitleText">
+<%= model.titleText %>
+</script><!-- tempTitleText -->
+
+<script type="text/html" id="tempDescriptionText">
+<%= model.descriptionText %>
+</script><!-- tempDescriptionText -->
+
+<script type="text/html" id="tempProflistName">
+<h3><%= model.name %></h3>
+</script><!-- tempProflistName -->
+
+<script type="text/html" id="tempProflistImg">
+<img class="img-responsive prof-img" src="<%= model.profImg %>">
+</script><!-- tempProflistImg -->
+
+<script type="text/html" id="tempMokujiList">
+<li>
+<span class="anker" id="mokuji_<%= model.innerId %>">
+<span class="tocnumber"><%= model.index %>.</span>
+<span class="toctext"><%= model.text %></span>
+</span>
+</li>
+</script><!-- tempMokujiList -->
+
+<script type="text/html" id="tempContentFooter">
+<div class="content-footer">
+  <span class="anker">▲ ページトップに戻る ▲</span>
+</div>
+</script><!-- tempContentFooter -->
+
+<script type="text/html" id="tempMainContent">
+<div class="main-box contents" id="<%= model.titleId %>">
+  <h2 class="title-text"><%= model.titleText %></h2>
+<div class="main-text">
+</div><!-- main-text -->
+</div><!-- main-box -->
+</script><!-- tempMainContent -->
+
+<script type="text/html" id="tempTextContent">
+<p><%= model.value %></p>
+</script><!-- tempTextContent -->
+
+<script type="text/html" id="tempSubTitleContent">
+<h3 class="subtitle-text"><%= model.value %></h3>
+</script><!-- tempSubTitleContent -->
+
+<script type="text/html" id="tempCategoryTitleContent">
+<h4 class="categorye-text"><%= model.value %></h4>
+</script><!-- tempCategoryTitleContent -->
+
+<script type="text/html" id="tempListContent">
+<ul class="list-unstyled <%= model.listClass %> <%= model.listId %>">
+</ul>
+</script><!-- tempListContent -->
+
+<script type="text/html" id="tempListTag">
+<li><%= model.value %></li>
+</script><!-- tempListTag -->
+
+<script type="text/html" id="tempTableContent">
+<table class="table table-bordered <%= model.tableId %>">
+<tbody>
+</tbody>
+</table>
+</script><!-- tempTableContent -->
+
+<script type="text/html" id="tempTableContentSimple">
+<table class="<%= model.tableId %>">
+<tbody>
+</tbody>
+</table>
+</script><!-- tempTableContentSimple -->
+
+<script type="text/html" id="tempTableTagTr">
+<tr class="<%= model.trClass %> <%= model.trId %>"></tr>
+</script><!-- tempTableTagTr -->
+
+<script type="text/html" id="tempTableTagTd">
+<td class="<%= model.tdId %>"><%= model.value %></td>
+</script><!-- tempTableTagTd -->
+
+<script type="text/html" id="tempTableTagTh">
+<th class="<%= model.tdId %>"><%= model.value %></th>
+</script><!-- tempTableTagTh -->
+
