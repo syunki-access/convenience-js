@@ -25,40 +25,7 @@
 <div id="profList" class="infobox gcard proflist">
   <div id="profListName" class="name"></div>
   <div id="profListImg"></div>
-  <div class="description">
-<table>
-  <tbody>
-  <tr>
-    <th>別名</th>
-    <td>AXS</td>
-  </tr>
-  <tr>
-    <th>ジャンル</th>
-    <td>J-POP</td>
-  </tr>
-  <tr>
-    <th>活動期間</th>
-    <td>
-      1992年 - 1995年<br>
-      2002年 -</td>
-  </tr>
-  <tr>
-    <th>
-      <hr>
-    </th>
-    <td>
-      <hr>
-    </td>
-  </tr>
-  <tr>
-    <th>メンバー</th>
-    <td>
-      浅倉大介（キーボード）<br>
-      貴水博之（ボーカル）
-    </td>
-  </tr>
-  </tbody>
-</table>
+  <div id="profListDescription" class="description">
   </div><!-- description -->
 </div><!-- gcard -->
 
@@ -280,6 +247,13 @@
 </tbody>
 </table>
 </script><!-- tempTableContent -->
+
+<script type="text/html" id="tempTableContentSimple">
+<table class="<%= model.tableId %>">
+<tbody>
+</tbody>
+</table>
+</script><!-- tempTableContentSimple -->
 
 <script type="text/html" id="tempTableTagTr">
 <tr class="<%= model.trClass %> <%= model.trId %>"></tr>

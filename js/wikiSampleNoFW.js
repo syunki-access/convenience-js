@@ -75,6 +75,43 @@ function createMainContents(_args){
             'model':json.proflist,
           });
         });
+        //テーブル入れ込み
+        var _addSelector = '#profListDescription';
+        var __tableId = 'tableProfListDescription';
+        us.temp({
+          'type':'add',
+          'tempSelector':'#tempTableContentSimple',
+          'addSelector':_addSelector,
+          'model':{
+            "tableId":__tableId,
+          },
+        });
+        _.each(json.proflist.list, function(tableVal, tableIndex) {
+          us.temp({
+            'type':'add',
+            'tempSelector':'#tempTableTagTr',
+            'addSelector':_addSelector+' .'+__tableId+' tbody',
+            'model':{
+              'trClass':'',
+              'trId':'tr'+tableIndex,
+            },
+          });
+          _.each(tableVal, function(listVal, listIndex) {
+            var __tempSelector = '#tempTableTagTd';
+            if(listIndex == 0){ //最初のみthタグ
+              __tempSelector = '#tempTableTagTh';
+            };
+            us.temp({
+              'type':'add',
+              'tempSelector':__tempSelector,
+              'addSelector':_addSelector+' .'+__tableId+' tbody .tr'+tableIndex,
+              'model':{
+                'value':listVal,
+                'tdId':'td'+listIndex,
+              },
+            });
+          });
+        });
       };
       //メインコンテンツ入れ込み
       if (json.main) {
