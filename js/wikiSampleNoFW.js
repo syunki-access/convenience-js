@@ -17,6 +17,18 @@ window.onload = function(){
 
 //コンストラクタ
 function init(_args) {
+  //yml読み込みテスト
+  var _ymlUrl = '../yml/wikiSampleYml.yml';
+  Convenience.getData({
+    'url':_ymlUrl,
+    'dataType':'text',
+    'type':'GET',
+    'callBack':function(_data){
+      console.log('_data', _data);
+      var _yml = jsyaml.load(_data);
+      console.log('_yml', _yml);
+    },
+  });
   //template読み込み
   $('#template').load('./common/tagTemplate.html', function(){
     //メインコンテンツ追加

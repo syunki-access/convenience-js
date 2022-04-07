@@ -142,35 +142,48 @@ function convenienceCollection(){
   
   //非同期通信用関数
   _convenience.isLoading = false;
-  //GET用
-  _convenience.getJsonData = function(_args){
-    var _jsonPath = _args.jsonPath;
+  _convenience.getData = function(_args){
+    var _url = _args.url; //urlは必須
+    var _dataType = _args.dataType;
+    var _type = _args.type;
     var _callBack = _args.callBack;
+    //それぞれデフォルトを設定
+    if(!_dataType){
+      _dataType = 'json';
+    }
+    if(!_type){
+      _type = 'GET';
+    }
+    if(!_callBack){
+      _callBack = function(){
+        //何もしない
+      };
+    }
     var _errorCallBack = function(){
       console.log('json受信失敗')
     }
     if(_args.errorCallBack){
       _errorCallBack = _args.errorCallBack;
     }
-    var _joinStr = '?';
-    if(_jsonPath.indexOf('?') !== -1){
-      _joinStr = '&';
+    var urlStr = '?';
+    if(_url.indexOf('?') !== -1){
+      urlStr = '&';
     }
-    _jsonPath = _jsonPath + _joinStr +'timestamp=' + new Date().getTime();
+    _url = _url + urlStr +'timestamp=' + new Date().getTime();
     // 通信中は次の通信は実行できない
     if(_convenience.isLoading){
       return;
     }
     // JSON取得実行
     $.ajax({
-      'url':_jsonPath,
-      'type':'GET',
-      'dataType':'json',
+      'url':_url,
+      'type':_type,
+      'dataType':_dataType,
     })
     // JSON取得成功
-    .done(function(_json){
+    .done(function(_data){
       _convenience.isLoading = false;
-      _callBack(_json);//コールバックに渡す
+      _callBack(_data);//コールバックに渡す
     })
     // JSON取得失敗
     .fail(function(){
@@ -183,7 +196,17 @@ function convenienceCollection(){
       _convenience.isLoading = false;
     });
     _convenience.isLoading = true;
-  }//gGetJsonDataPost
+  };//getData
+  //jsonGET用
+  _convenience.getJsonData = function(_args){
+    _convenience.getData({
+      'url':_args.jsonPath,
+      'dataType':'json',
+      'type':'GET',
+      'callBack':_args.callBack,
+      'errorCallBack':_args.errorCallBack,
+    })
+  }//getJsonData
   
   //タッチイベント制御関数
   //addするときにちゃんと前のイベントを自動で消してくれる
