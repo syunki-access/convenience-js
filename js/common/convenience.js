@@ -174,18 +174,18 @@ function convenienceCollection(){
     if(_convenience.isLoading){
       return;
     }
-    // JSON取得実行
+    // data取得実行
     $.ajax({
       'url':_url,
       'type':_type,
       'dataType':_dataType,
     })
-    // JSON取得成功
+    // data取得成功
     .done(function(_data){
       _convenience.isLoading = false;
       _callBack(_data);//コールバックに渡す
     })
-    // JSON取得失敗
+    // data取得失敗
     .fail(function(){
       _convenience.isLoading = false;
       _errorCallBack();
@@ -200,8 +200,18 @@ function convenienceCollection(){
   //jsonGET用
   _convenience.getJsonData = function(_args){
     _convenience.getData({
-      'url':_args.jsonPath,
+      'url':_args.url,
       'dataType':'json',
+      'type':'GET',
+      'callBack':_args.callBack,
+      'errorCallBack':_args.errorCallBack,
+    })
+  }//getJsonData
+  //ymlGET用
+  _convenience.getYmlData = function(_args){
+    _convenience.getData({
+      'url':_args.url,
+      'dataType':'text',
       'type':'GET',
       'callBack':_args.callBack,
       'errorCallBack':_args.errorCallBack,

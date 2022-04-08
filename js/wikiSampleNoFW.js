@@ -17,135 +17,139 @@ window.onload = function(){
 
 //コンストラクタ
 function init(_args) {
-  //yml読み込みテスト
-  var _ymlUrl = '../yml/wikiSampleYml.yml';
-  Convenience.getData({
-    'url':_ymlUrl,
-    'dataType':'text',
-    'type':'GET',
-    'callBack':function(_data){
-      console.log('_data', _data);
-      var _yml = jsyaml.load(_data);
-      console.log('_yml', _yml);
-    },
+  //データ取得
+  getPageData({
+    'callBack':__callBack,
   });
-  //template読み込み
-  $('#template').load('./common/tagTemplate.html', function(){
-    //メインコンテンツ追加
-    createMainContents({
-      'callback':function(){
+  function __callBack(_args){
+    var _data = _args.data;
+    //template読み込み
+    $('#template').load('./common/tagTemplate.html', function(){
+      //メインコンテンツ追加
+      createMainContents({
+        'data':_data,
+      });
+      //コンテンツ生成後に実行
+      setTimeout(() => {
         //目次自動生成
         createMokujiList({});
         //content-footer生成
         createContentFooter({});
-      },
+      }, 5);
     });
+  };
+};
+
+//ページデータ取得
+function getPageData(_args){
+  var _callBack = _args.callBack;
+  //コンテンツ用data読み込み
+  var _url = '../yml/wikiSampleYml.yml';
+  Convenience.getYmlData({
+    'url':_url,
+    'callBack':function(data){
+      _callBack({
+        'data':jsyaml.load(data),
+      });
+    },
   });
 };
 
 //メインコンテンツ追加
 function createMainContents(_args){
-  var _callback = _args.callback;
-  //コンテンツ用json読み込み
-  var _jsonPath = '../json/wikiSample.json';
-  Convenience.getJsonData({
-    'jsonPath':_jsonPath,
-    'callBack':function(json){
-      //タイトル・説明文入れ込み
-      if(json.header){
-        _.each([
-          {
-            'tempSelector':'#tempTitleText',
-            'addSelector':'#titleText',
-          },
-          {
-            'tempSelector':'#tempDescriptionText',
-            'addSelector':'#descriptionText',
-          },
-        ], function(val, index) {
-          us.temp({
-            'type':'add',
-            'tempSelector':val.tempSelector,
-            'addSelector':val.addSelector,
-            'model':json.header,
-          });
-        });
-      };
-      //プロフィール入れ込み
-      if(json.proflist){
-        _.each([
-          {
-            'tempSelector':'#tempProflistName',
-            'addSelector':'#profListName',
-          },
-          {
-            'tempSelector':'#tempProflistImg',
-            'addSelector':'#profListImg',
-          },
-        ], function(val, index) {
-          us.temp({
-            'type':'add',
-            'tempSelector':val.tempSelector,
-            'addSelector':val.addSelector,
-            'model':json.proflist,
-          });
-        });
-        //テーブル入れ込み
-        var _addSelector = '#profListDescription';
-        var __tableId = 'tableProfListDescription';
+  var _data = _args.data;
+  //タイトル・説明文入れ込み
+  if(_data.header){
+    _.each([
+      {
+        'tempSelector':'#tempTitleText',
+        'addSelector':'#titleText',
+      },
+      {
+        'tempSelector':'#tempDescriptionText',
+        'addSelector':'#descriptionText',
+      },
+    ], function(val, index) {
+      us.temp({
+        'type':'add',
+        'tempSelector':val.tempSelector,
+        'addSelector':val.addSelector,
+        'model':_data.header,
+      });
+    });
+  };
+  //プロフィール入れ込み
+  if(_data.proflist){
+    _.each([
+      {
+        'tempSelector':'#tempProflistName',
+        'addSelector':'#profListName',
+      },
+      {
+        'tempSelector':'#tempProflistImg',
+        'addSelector':'#profListImg',
+      },
+    ], function(val, index) {
+      us.temp({
+        'type':'add',
+        'tempSelector':val.tempSelector,
+        'addSelector':val.addSelector,
+        'model':_data.proflist,
+      });
+    });
+    //テーブル入れ込み
+    var _addSelector = '#profListDescription';
+    var __tableId = 'tableProfListDescription';
+    us.temp({
+      'type':'add',
+      'tempSelector':'#tempTableContentSimple',
+      'addSelector':_addSelector,
+      'model':{
+        "tableId":__tableId,
+      },
+    });
+    _.each(_data.proflist.list, function(tableVal, tableIndex) {
+      us.temp({
+        'type':'add',
+        'tempSelector':'#tempTableTagTr',
+        'addSelector':_addSelector+' .'+__tableId+' tbody',
+        'model':{
+          'trClass':'',
+          'trId':'tr'+tableIndex,
+        },
+      });
+      _.each(tableVal, function(listVal, listIndex) {
+        var __tempSelector = '#tempTableTagTd';
+        if(listIndex == 0){ //最初のみthタグ
+          __tempSelector = '#tempTableTagTh';
+        };
         us.temp({
           'type':'add',
-          'tempSelector':'#tempTableContentSimple',
-          'addSelector':_addSelector,
+          'tempSelector':__tempSelector,
+          'addSelector':_addSelector+' .'+__tableId+' tbody .tr'+tableIndex,
           'model':{
-            "tableId":__tableId,
+            'value':listVal,
+            'tdId':'td'+listIndex,
           },
         });
-        _.each(json.proflist.list, function(tableVal, tableIndex) {
-          us.temp({
-            'type':'add',
-            'tempSelector':'#tempTableTagTr',
-            'addSelector':_addSelector+' .'+__tableId+' tbody',
-            'model':{
-              'trClass':'',
-              'trId':'tr'+tableIndex,
-            },
-          });
-          _.each(tableVal, function(listVal, listIndex) {
-            var __tempSelector = '#tempTableTagTd';
-            if(listIndex == 0){ //最初のみthタグ
-              __tempSelector = '#tempTableTagTh';
-            };
-            us.temp({
-              'type':'add',
-              'tempSelector':__tempSelector,
-              'addSelector':_addSelector+' .'+__tableId+' tbody .tr'+tableIndex,
-              'model':{
-                'value':listVal,
-                'tdId':'td'+listIndex,
-              },
-            });
-          });
-        });
-      };
-      //メインコンテンツ入れ込み
-      if (json.main) {
-        _.each(json.main, function(val, index) {
-          us.temp({
-            'type':'add',
-            'tempSelector':'#tempMainContent',
-            'addSelector':'#mainContentsWrapper',
-            'model':val,
-          });
-          createContentsHTML({
-            'contents':val.contents,
-            'addSelector':'#'+val.titleId,
-          });
-        });
-      }
-      _callback();//コールバック実行
-    },
-  })
+      });
+    });
+  };
+  //メインコンテンツ入れ込み
+  if (_data.main) {
+    _.each(_data.main, function(val, index) {
+      us.temp({
+        'type':'add',
+        'tempSelector':'#tempMainContent',
+        'addSelector':'#mainContentsWrapper',
+        'model':val,
+      });
+      createContentsHTML({
+        'contents':val.contents,
+        'addSelector':'#'+val.titleId,
+      });
+    });
+  };
 };//createMainContents
 
 //各コンテンツHTMLを生成する

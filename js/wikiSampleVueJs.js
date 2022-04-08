@@ -90,9 +90,9 @@ function createVueInstance(_args){
 function getPageData(_args){
   var _callback = _args.callback;
   //コンテンツ用json読み込み
-  var _jsonPath = '../json/wikiSample.json';
+  var _url = '../json/wikiSample.json';
   Convenience.getJsonData({
-    'jsonPath':_jsonPath,
+    'url':_url,
     'callBack':function(json){
       _callback({
         'data':json,
