@@ -45,6 +45,7 @@ function getPageData(_args){
   var _callBack = _args.callBack;
   //コンテンツ用data読み込み
   var _url = '../yml/wikiSampleYml.yml';
+  //_url = '../json/wikiSample.json';
   Convenience.getYmlData({
     'url':_url,
     'callBack':function(data){
