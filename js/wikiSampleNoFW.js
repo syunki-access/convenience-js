@@ -61,6 +61,12 @@ function createMainContents(_args){
   var _data = _args.data;
   //タイトル・説明文入れ込み
   if(_data.header){
+    //改行変換
+    _.each(_data.header, function(_val, _index, _list){
+      _list[_index] = Convenience.convertReturnToBrTag({
+        text:_val,
+      });
+    });
     _.each([
       {
         'tempSelector':'#tempTitleText',
@@ -129,7 +135,9 @@ function createMainContents(_args){
           'tempSelector':__tempSelector,
           'addSelector':_addSelector+' .'+__tableId+' tbody .tr'+tableIndex,
           'model':{
-            'value':listVal,
+            'value':Convenience.convertReturnToBrTag({ //改行変換
+              text:listVal,
+            }),
             'tdId':'td'+listIndex,
           },
         });

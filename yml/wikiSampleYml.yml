@@ -1,610 +1,71 @@
-{
-  # ヘッダー用データ
-  header: {
-    titleText: access (音楽ユニット)【yml版】,
-    descriptionText: 
-      access（アクセス）は、キーボーディスト浅倉大介とボーカリスト貴水博之による日本の音楽ユニット。
-      1992年にデビュー。1995年より活動を休止するが2002年に活動再開。
-      所属レーベルはSony Music Associated Records。所属事務所はDarwin（浅倉）、Guan Barl（貴水）。
-  },
-  # プロフィール用データ
-  proflist: {
-    name: access,
-    profImg: ../img/TEAR'S LIBERATION.jpg,
-    list: [
-      [
-        別名,
-        AXS,
-      ],
-      [
-        ジャンル,
-        J-POP,
-      ],
-      [
-        活動期間,
-        1992年 - 1995年<br>2002年 -,
-      ],
-      [
-        <hr>,
-        <hr>,
-      ],
-      [
-        メンバー,
-        浅倉大介（キーボード）<br>貴水博之（ボーカル）,
-      ]
-    ]
-  },
-  # メイン用データ
-  main: [
-    {
-      titleId: memberSec,
-      titleText: メンバー,
-      contents: [
-        {
-          type: subTitle,
-          value: 浅倉大介
-        },
-        {
-          type: list,
-          listClass: other-link,
-          value: [
-            キーボード,
-            作曲、編曲、プロデュース
-          ]
-        },
-        {
-          type: subTitle,
-          value: 貴水博之
-        },
-        {
-          type: list,
-          listClass: other-link,
-          value: [
-            ボーカル,
-            作詞
-          ]
-        }
-      ]
-    },
-    {
-      titleId: unitNameSec,
-      titleText: ユニット名の由来,
-      contents: [
-        {
-          type: text,
-          value: 音楽を通じてファンと接触したいという気持ちと、コンピュータ用語のアクセスをかけあわせた名前。「英語のワンワードでコンピュータに関連した名前」という浅倉の意向に合ったこともありaccessと命名された。50音でもアルファベットでも一番先頭にきやすいというのも理由の1つ。略表記は「<em>AXS</em>」。
-        }
-      ]
-    },
-    {
-      titleId: historySec,
-      titleText: 来歴,
-      contents: [
-        {
-          type: subTitle,
-          value: 結成〜活動休止
-        },
-        {
-          type: categoryTitle,
-          value: 1992年
-        },
-        {
-          type: list,
-          listClass: other-link,
-          value: [
-            7月頃、浅倉大介の2ndアルバム『D-Trick』にゲストボーカリストとして貴水博之が参加。ユニットを結成する。,
-            9月29日、浅倉大介のライブ「Day-Trick」日本教育会館公演にゲスト出演。,
-            11月25日、ライブ「Virgin Emotion〜Start On access 1125〜」（原宿ルイード）を行う。,
-            11月26日、1stシングル『Virgin Emotion』をリリース（オリコン最高位40位）。
-          ]
-        },
-        {
-          type: categoryTitle,
-          value: 1993年
-        },
-        {
-          type: list,
-          listClass: other-link,
-          value: [
-            1月25日、2ndシングル『JEWELRY ANGEL』をリリース（オリコン最高位14位）。,
-            2月25日、1stアルバム『FAST ACCESS』をリリース（オリコン最高位2位）。,
-            3月20日〜4月12日、ライブツアー「FAST ACCESS TOUR '93」（8都市8公演）を行う。,
-            5月26日、3rdシングル『NAKED DESIRE』をリリース（オリコン最高位3位）。,
-            8月5日、ライブイベント「TEEN'S MUSIC FESTIVAL」（中野サンプラザ）に出演。,
-            8月9日〜28日、ライブイベント「Racy Rockfes」（3都市3公演）に出演。,
-            8月25日、4thシングル『MOONSHINE DANCE』をリリース（オリコン最高位4位）。,
-            9月22日、2ndアルバム『ACCESS II』をリリース（オリコン最高位2位）。,
-            10月18日〜12月28日、ライブツアー「SYNC-ACROSS JAPAN TOUR '93 ACCESS TO SECOND」（21都市24公演）を行う。,
-            12月8日、5thシングル『TRY AGAIN』をリリース（オリコン最高位5位）。,
-            12月31日、『ACCESS II』で日本レコード大賞ベストアルバム賞を受賞。
-          ]
-        },
-        {
-          type: categoryTitle,
-          value: 1994年
-        },
-        {
-          type: list,
-          listClass: other-link,
-          value: [
-            1月26日、6thシングル『夢を見たいから』をリリース（オリコン最高位3位）。,
-            4月27日、7thシングル『MISTY HEARTBREAK』をリリース（オリコン最高位2位）。,
-            5月8日、1stリミックスシングル『MISTY HEARTBREAK Re-SYNC STYLE』をリリース（オリコン最高位12位）。,
-            5月25日、3rdアルバム『DELICATE PLANET』（オリコン最高位1位）、8thシングル『SWEET SILENCE』（オリコン最高位5位）をリリース。,
-            6月2日〜9月2日、ライブツアー「SYNC-ACROSS JAPAN TOUR '94 DELICATE PLANET」（35都市39公演）を行う。,
-            8月19日、9thシングル『DRASTIC MERMAID』をリリース（オリコン最高位3位）。,
-            8月25日、2ndリミックスシングル『DRASTIC MERMAID Re-SYNC STYLE』をリリース（オリコン最高位12位）。,
-            10月19日、10thシングル『SCANDALOUS BLUE』をリリース（オリコン最高位3位）。,
-            11月2日、3rdリミックスシングル『SCANDALOUS BLUE Re-SYNC STYLE』をリリース（オリコン最高位10位）。,
-            12月7日、11thシングル『TEAR'S LIBERATION』をリリース（オリコン最高位3位）。,
-            12月12日〜19日、ライブツアー「SYNC-ACROSS JAPAN TOUR '94 DELICATE PLANET ARENA STYLE」（3都市6公演）を行う。,
-            12月14日、4thリミックスシングル『TEAR'S LIBERATION Re-SYNC STYLE』をリリース（オリコン最高位19位）。,
-            12月31日、『SCANDALOUS BLUE』でNHK紅白歌合戦に出場。
-          ]
-        },
-        {
-          type: categoryTitle,
-          value: 1995年
-        },
-        {
-          type: list,
-          listClass: other-link,
-          value: [
-            1月1日、活動休止を発表。,
-            3月15日、ライブアルバム『LIVE ZEROS SYNC-ACROSS JAPAN TOUR '93-'94』（オリコン最高位4位）、『LIVE ONES SYNC-ACROSS JAPAN TOUR '93-'94』（オリコン最高位5位）をリリース。,
-            10月1日、ベストアルバム『AXS SINGLE TRACKS』（オリコン最高位6位）をリリース。
-          ]
-        }
-      ]
-    },
-    {
-      titleId: discographySec,
-      titleText: ディスコグラフィ,
-      contents: [
-        {
-          type: subTitle,
-          value: シングル
-        },
-        {
-          type: table,
-          value: [
-            {
-              trClass: table-title,
-              tdTemplate: tempTableTagTh,
-              list: [
-                ,
-                発売日,
-                タイトル,
-                楽曲制作,
-                最高位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                1st,
-                1992年11月26日,
-                Virgin Emotion,
-                作詞：貴水博之<br>作曲：浅倉大介<br>編曲：浅倉大介,
-                40位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                2nd,
-                1993年1月25日,
-                JEWELRY ANGEL,
-                作詞：貴水博之<br>作曲：浅倉大介<br>編曲：浅倉大介,
-                14位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                3rd,
-                1993年5月26日,
-                NAKED DESIRE,
-                作詞：貴水博之<br>作曲：浅倉大介<br>編曲：浅倉大介,
-                3位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                4th,
-                1993年8月25日,
-                MOONSHINE DANCE,
-                作詞：貴水博之<br>作曲：浅倉大介<br>編曲：浅倉大介,
-                4位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                5th,
-                1993年12月8日,
-                TRY AGAIN,
-                作詞：井上秋緒<br>作曲：浅倉大介<br>編曲：浅倉大介,
-                5位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                6th,
-                1994年1月26日,
-                夢を見たいから,
-                作詞：貴水博之<br>作曲：浅倉大介<br>編曲：浅倉大介,
-                3位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                7th,
-                1994年4月27日,
-                MISTY HEARTBREAK,
-                作詞：貴水博之<br>作曲：浅倉大介<br>編曲：浅倉大介,
-                2位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                8th,
-                1994年5月25日,
-                SWEET SILENCE,
-                作詞：井上秋緒<br>作曲：浅倉大介<br>編曲：浅倉大介,
-                5位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                9th,
-                1994年8月19日,
-                DRASTIC MERMAID,
-                作詞：井上秋緒<br>作曲：浅倉大介<br>編曲：浅倉大介,
-                3位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                10th,
-                1994年10月19日,
-                SCANDALOUS BLUE,
-                作詞：井上秋緒<br>作曲：浅倉大介<br>編曲：浅倉大介,
-                3位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                11th,
-                1994年12月7日,
-                TEAR'S LIBERATION,
-                作詞：井上秋緒<br>作曲：浅倉大介<br>編曲：浅倉大介,
-                3位
-              ]
-            }
-          ]
-        },
-        {
-          type: categoryTitle,
-          value: リミックスシングル
-        },
-        {
-          type: table,
-          value: [
-            {
-              trClass: table-title,
-              tdTemplate: tempTableTagTh,
-              list: [
-                ,
-                発売日,
-                タイトル,
-                最高位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                1st,
-                1994年5月8日,
-                MISTY HEARTBREAK Re-SYNC STYLE,
-                12位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                2nd,
-                1994年8月25日,
-                DRASTIC MERMAID Re-SYNC STYLE,
-                12位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                3rd,
-                1994年11月2日,
-                SCANDALOUS BLUE Re-SYNC STYLE,
-                10位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                4th,
-                1994年12月14日,
-                TEAR'S LIBERATION Re-SYNC STYLE,
-                19位
-              ]
-            }
-          ]
-        },
-        {
-          type: subTitle,
-          value: アルバム
-        },
-        {
-          type: table,
-          value: [
-            {
-              trClass: table-title,
-              tdTemplate: tempTableTagTh,
-              list: [
-                ,
-                発売日,
-                タイトル,
-                最高位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                1st,
-                1993年2月25日,
-                FAST ACCESS,
-                2位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                2nd,
-                1993年9月22日,
-                ACCESS II,
-                2位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                3rd,
-                1994年5月25日,
-                DELICATE PLANET,
-                1位
-              ]
-            }
-          ]
-        },
-        {
-          type: categoryTitle,
-          value: ベストアルバム
-        },
-        {
-          type: table,
-          value: [
-            {
-              trClass: table-title,
-              tdTemplate: tempTableTagTh,
-              list: [
-                発売日,
-                タイトル,
-                最高位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                1995年10月1日,
-                AXS SINGLE TRACKS,
-                6位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                1998年6月24日,
-                SEQUENCE MEDITATION 〜超電導思考回路〜,
-                57位
-              ]
-            }
-          ]
-        },
-        {
-          type: categoryTitle,
-          value: ライブアルバム
-        },
-        {
-          type: table,
-          value: [
-            {
-              trClass: table-title,
-              tdTemplate: tempTableTagTh,
-              list: [
-                発売日,
-                タイトル,
-                最高位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                1995年3月15日,
-                LIVE ZEROS SYNC-ACROSS JAPAN TOUR '93-'94,
-                4位
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                1995年3月15日,
-                LIVE ONES SYNC-ACROSS JAPAN TOUR '93-'94,
-                5位
-              ]
-            }
-          ]
-        }
-      ]
-    },
+# ▼▼▼▼▼▼ ヘッダー用データ ▼▼▼▼▼▼
+header: 
+  titleText: 
+    access (音楽ユニット)【yml版】
+  descriptionText: |-
+    access（アクセス）は、キーボーディスト浅倉大介とボーカリスト貴水博之による日本の音楽ユニット。1992年にデビュー。1995年より活動を休止するが2002年に活動再開。
+    所属レーベルはSony Music Associated Records。所属事務所はDarwin（浅倉）、Guan Barl（貴水）。
+# ▲▲▲▲▲▲ ヘッダー用データ ▲▲▲▲▲▲
 
-    # ここからサンプル用データ
-    {
-      titleId: templateSec,
-      titleText: テンプレートサンプル集,
-      contents: [
-        {
-          type: subTitle,
-          value: サブタイトルサンプル
-        },
-        {
-          type: categoryTitle,
-          value: カテゴリータイトルサンプル
-        },
-        {
-          type: text,
-          value: テキストサンプルです。テキストサンプルです。テキストサンプルです。テキストサンプルです。テキストサンプルです。<br>改行もできます。テキストサンプルです。テキストサンプルです。テキストサンプルです。
-        },
-        {
-          type: text,
-          value: テキストサンプルです。テキストサンプルです。テキストサンプルです。テキストサンプルです。テキストサンプルです。<br>改行もできます。テキストサンプルです。テキストサンプルです。テキストサンプルです。
-        },
-        {
-          type: subTitle,
-          value: リストサンプル
-        },
-        {
-          type: list,
-          listClass: other-link,
-          value: [
-            リストサンプルです。,
-            リストサンプルです。,
-            リストサンプルです。,
-            <a href='https: //www.google.co.jp/' target='blank'>リストサンプルリンク</a>
-          ]
-        },
-        {
-          type: list,
-          listClass: fanclub-link,
-          value: [
-            リストサンプルです。,
-            リストサンプルです。,
-            リストサンプルです。,
-            <a href='https: //www.google.co.jp/' target='blank'>リストサンプルリンク</a>
-          ]
-        },
-        {
-          type: list,
-          listClass: solo-link,
-          value: [
-            リストサンプルです。,
-            リストサンプルです。,
-            リストサンプルです。,
-            <a href='https: //www.google.co.jp/' target='blank'>リストサンプルリンク</a>
-          ]
-        },
-        {
-          type: subTitle,
-          value: テーブルサンプル
-        },
-        {
-          type: table,
-          value: [
-            {
-              trClass: table-title,
-              tdTemplate: tempTableTagTh,
-              list: [
-                タイトル1,
-                タイトル2,
-                タイトル3,
-                タイトル4,
-                タイトル5
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                コンテンツ1,
-                コンテンツ2,
-                コンテンツ3,
-                コンテンツ4,
-                コンテンツ5
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                コンテンツ1,
-                コンテンツ2,
-                コンテンツ3,
-                コンテンツ4,
-                コンテンツ5
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                コンテンツ1,
-                コンテンツ2,
-                コンテンツ3,
-                コンテンツ4,
-                コンテンツ5
-              ]
-            },
-            {
-              trClass: ,
-              tdTemplate: tempTableTagTd,
-              list: [
-                コンテンツ1,
-                コンテンツ2,
-                コンテンツ3,
-                コンテンツ4,
-                コンテンツ5
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-}
+# ▼▼▼▼▼▼ プロフィール用データ ▼▼▼▼▼▼
+proflist: 
+  name: 
+    access
+  profImg: 
+    ../img/TEAR'S LIBERATION.jpg
+  list: 
+    - 
+      - |-
+        別名
+      - |-
+        AXS
+    - 
+      - |-
+        ジャンル
+      - |-
+        J-POP
+    - 
+      - |- 
+        活動期間
+      - |-
+        1992年 〜 1995年
+        2002年 〜
+    - 
+      - |-
+        <hr>
+      - |-
+        <hr>
+    - 
+      - |-
+        メンバー
+      - |-
+        浅倉大介（キーボード）
+        貴水博之（ボーカル）
+# ▲▲▲▲▲▲ プロフィール用データ ▲▲▲▲▲▲
+
+# ▼▼▼▼▼▼ メイン用データ ▼▼▼▼▼▼
+main: 
+  - 
+    titleId: memberSec
+    titleText: メンバー
+    contents: 
+      - 
+        type: subTitle
+        value: 浅倉大介
+      - 
+        type: list
+        listClass: other-link
+        value: 
+          - キーボード
+          - 作曲、編曲、プロデュース
+      - 
+        type: subTitle
+        value: 貴水博之
+      - 
+        type: list
+        listClass: other-link
+        value: 
+          - ボーカル
+          - 作詞
+# ▲▲▲▲▲▲ メイン用データ ▲▲▲▲▲▲
+

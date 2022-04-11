@@ -400,6 +400,13 @@ function convenienceCollection(){
     return _manager;
   }//countDownTimerManager
   
+  //改行変換
+  _convenience.convertReturnToBrTag = function(_args){
+    var _text = _args.text;
+    var _convertText = _text.replace(/(\r\n|\n|\r)/gm, '<br>');
+    return _convertText;
+  }//convertReturnToBrTag
+
   return _convenience;
 }//convenienceCollection
 
