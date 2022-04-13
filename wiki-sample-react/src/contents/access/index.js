@@ -1,7 +1,13 @@
-import pageContents from './page.json';
+import { 
+  useState, 
+  useEffect 
+} from 'react';
 import { 
   makeStyles,
 } from '@material-ui/core/styles';
+import getData from 'lib/get_data';
+
+import pageContents from './page.json';
 
 const useStyles = makeStyles({
   mainSec: {
@@ -17,7 +23,26 @@ const useStyles = makeStyles({
   }
 });
 
+const getContentsData = (props) => {
+  let _data;
+  const _getData = getData();
+  _getData.yml({
+    'url':'./yml/access/data.yml',
+    'callBack':function(yml){
+      _data = jsyaml.load(yml);
+      console.log('_data', _data);
+    },
+  });
+  return _data;
+};
+
 const Access = (props) => {
+  useEffect(() => {
+    const _data = getContentsData({});
+    return () => {
+      //componentWillUnmount
+    }
+  }, []);
   console.log('pageContents', pageContents);
   const classes = useStyles();
   return (<div className={classes.mainSec}>
