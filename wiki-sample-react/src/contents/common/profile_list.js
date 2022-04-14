@@ -1,4 +1,4 @@
-import CreateTable from "./create_table";
+import CreateSimpleTable from "./create_simple_table";
 
 const ProfileList = (props) => {
   const _proflist = props.proflist;
@@ -11,7 +11,7 @@ const ProfileList = (props) => {
         <img className="img-responsive prof-img" src={_proflist.profImg} />
       </div>
       <div id="profListDescription" className="description">
-        <CreateTable 
+        <CreateSimpleTable 
           tableData={_proflist.list} 
         />
       </div>

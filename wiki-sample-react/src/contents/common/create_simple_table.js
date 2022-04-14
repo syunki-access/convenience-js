@@ -21,7 +21,7 @@ const CreateTd = (props) => {
   </>)
 };
 
-const CreateTable = (props) => {
+const CreateSimpleTable = (props) => {
   const _tableData = props.tableData;
   return (<>
     <table className="tableProfListDescription">
@@ -40,8 +40,8 @@ const CreateTable = (props) => {
   </>)
 };
 
-CreateTable.defaultProps = {
+CreateSimpleTable.defaultProps = {
   tableData:[], 
 };
 
-export default CreateTable;
+export default CreateSimpleTable;
