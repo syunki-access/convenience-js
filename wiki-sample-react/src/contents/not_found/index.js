@@ -14,9 +14,7 @@ const useStyles = makeStyles({
 const NotFound = (props) => {
   const classes = useStyles();
   return (<div className={classes.mainSec}>
-    <MainPage 
-      url="/yml/data_not_found.yml" 
-    />
+    <MainPage />
   </div>)
 };
 

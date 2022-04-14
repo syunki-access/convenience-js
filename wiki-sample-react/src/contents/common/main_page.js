@@ -4,6 +4,9 @@ import {
 } from 'react';
 import getData from 'lib/get_data';
 
+//各パーツ
+import HeaderTitleText from './header_title_text';
+
 const getContentsData = (props) => {
   let _data;
   const _getData = getData();
@@ -40,11 +43,10 @@ const MainPage = (props) => {
   }, []);
   return (<>
     <div className="main-box">
-  <h2 id="titleText" className="title-text notFoundTitle">
-{header.titleText}
-</h2>
-<div className="main-text">
-
+      <div className="main-text">
+      <HeaderTitleText 
+        titleText={header.titleText} 
+      />
 <div id="profList" className="infobox gcard proflist">
   <div id="profListName" className="name">
 <h3>{proflist.name}</h3>
