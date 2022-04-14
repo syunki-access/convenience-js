@@ -403,7 +403,7 @@ function convenienceCollection(){
   //改行変換
   _convenience.convertReturnToBrTag = function(_args){
     var _text = _args.text;
-    var _convertText = _text.replace(/(\r\n|\n|\r)/gm, '<br>');
+    var _convertText = String(_text).replace(/(\r\n|\n|\r)/gm, '<br>');
     return _convertText;
   }//convertReturnToBrTag
 

@@ -172,7 +172,11 @@ function createContentsHTML(_args) {
         'type':'add',
         'tempSelector':'#tempTextContent',
         'addSelector':_addSelector,
-        'model':val,
+        'model':{
+          'value':Convenience.convertReturnToBrTag({ //改行変換
+            text:val.value,
+          }),
+        },
       });
     }else if(val.type == 'list'){
       var __listId = 'list'+index;
@@ -191,7 +195,9 @@ function createContentsHTML(_args) {
           'tempSelector':'#tempListTag',
           'addSelector':_addSelector+' .'+__listId,
           'model':{
-            'value':listVal,
+            'value':Convenience.convertReturnToBrTag({ //改行変換
+              text:listVal,
+            }),
           },
         });
       });
@@ -200,14 +206,22 @@ function createContentsHTML(_args) {
         'type':'add',
         'tempSelector':'#tempSubTitleContent',
         'addSelector':_addSelector,
-        'model':val,
+        'model':{
+          'value':Convenience.convertReturnToBrTag({ //改行変換
+            text:val.value,
+          }),
+        },
       });
     }else if(val.type == 'categoryTitle'){
       us.temp({
         'type':'add',
         'tempSelector':'#tempCategoryTitleContent',
         'addSelector':_addSelector,
-        'model':val,
+        'model':{
+          'value':Convenience.convertReturnToBrTag({ //改行変換
+            text:val.value,
+          }),
+        },
       });
     }else if(val.type == 'table'){
       var __tableId = 'table'+index;
@@ -235,7 +249,9 @@ function createContentsHTML(_args) {
             'tempSelector':'#'+tableVal.tdTemplate,
             'addSelector':_addSelector+' .'+__tableId+' tbody .tr'+tableIndex,
             'model':{
-              'value':listVal,
+              'value':Convenience.convertReturnToBrTag({ //改行変換
+                text:listVal,
+              }),
               'tdId':'td'+listIndex,
             },
           });
