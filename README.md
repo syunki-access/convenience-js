@@ -15,6 +15,16 @@
 http://localhost:5963/convenience-js/html/wikiSampleNoFW.html  
 - vue.jsでの描画  
 http://localhost:5963/convenience-js/html/wikiSampleVueJs.html  
+  
+  
+# pythonのインストール手順（mac）
+## Homebrewのインストール
+- https://qiita.com/zaburo/items/29fe23c1ceb6056109fd  
+こちらを参考にまず、Homebrewをインストール  
+
+## pyenvを使ったpythonのインストール
+- https://zenn.dev/kenghaya/articles/9f07914156fab5  
+pythonはバージョンがいっぱいあるので、バージョン管理するためにこちらでインストールしたほうが無難。  
 
 # react版もあり
 `wiki-sample-react`のディレクトリ以下がreact版になります。  
