@@ -32,10 +32,19 @@ http://localhost:5963/convenience-js/html/wikiSampleVueJs.html
 `$ cd 【アプリのディレクトリ】`  
 `$ npm install --no-audit --save --legacy-peer-deps @testing-library/jest-dom@^5.14.1 @testing-library/react@^12.0.0 @testing-library/user-event@^13.2.1 web-vitals@^2.1.0`  
 とすれば多分大丈夫。  
+
 - create-react-app のインストールが終わった後、react react-dom のバージョンをver.17に下げること。  
 `$ npm install react@17.0.2`  
 `$ npm install react-dom@17.0.2`  
 【2022/04現在】ver.18はその他のパッケージの依存関係で不安定らしい  
+
+### ESLintのチェック除外の書き方
+- ymlを使う時に外部呼び出しのjavascriptを使っているため、定義していないオブジェクトがある  
+そのため、ESLintでエラー表示が出るが、それを回避する方法が下記。  
+https://qiita.com/nju33/items/2d0cfea4fffbfdbff87a  
+[具体的に使っている場所はここ](https://github.com/syunki-access/convenience-js/blob/db93d8894cb94a452b9799a06547072a1036ee0e/wiki-sample-react/src/contents/common/main_page.js#L18)  
+
+- 基本はコメントアウトで処理すること
 
 ## マークダウン記法の書き方
 https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa  
