@@ -1,7 +1,7 @@
 # ▼▼▼▼▼▼ ヘッダー用データ ▼▼▼▼▼▼
 header: 
   titleText: 
-    access (音楽ユニット)【yml版】
+    access (音楽ユニット)【react版】
   descriptionText: |-
     access（アクセス）は、キーボーディスト浅倉大介とボーカリスト貴水博之による日本の音楽ユニット。1992年にデビュー。1995年より活動を休止するが2002年に活動再開。
     所属レーベルはSony Music Associated Records。所属事務所はDarwin（浅倉）、Guan Barl（貴水）。
@@ -67,5 +67,15 @@ main:
         value: 
           - ボーカル
           - 作詞
+  - 
+    titleId: unitNameSec
+    titleText: ユニット名の由来
+    contents: 
+      - 
+        type: text
+        value: |-
+          音楽を通じてファンと接触したいという気持ちと、コンピュータ用語のアクセスをかけあわせた名前。
+          「英語のワンワードでコンピュータに関連した名前」という浅倉の意向に合ったこともありaccessと命名された。50音でもアルファベットでも一番先頭にきやすいというのも理由の1つ。
+          略表記は「<em>AXS</em>」。
 # ▲▲▲▲▲▲ メイン用データ ▲▲▲▲▲▲
 
