@@ -4,7 +4,27 @@ import React from "react";
 const SetSubTitle = (props) => {
   const _text = props.value.value;
   return (<>
-    <h3 className="subtitle-text">{_text}</h3>
+    <h3 className="subtitle-text">
+      <span dangerouslySetInnerHTML={{__html: _text}}/>
+    </h3>
+  </>)
+};
+
+//カテゴリータイトル
+const SetCategoryTitle = (props) => {
+  const _text = props.value.value;
+  return (<>
+    <h4 className="categorye-text">
+      <span dangerouslySetInnerHTML={{__html: _text}}/>
+    </h4>
+  </>)
+};
+
+//テキスト
+const SetText = (props) => {
+  const _text = props.value.value;
+  return (<>
+    <p dangerouslySetInnerHTML={{__html: _text}}/>
   </>)
 };
 
@@ -17,11 +37,48 @@ const SetList = (props) => {
     <ul className={_listClass+" list-unstyled"}>
       {_list.map((__val, __index) => {
         return (<React.Fragment key={__index}>
-          <li>{__val}</li>
+          <li>
+            <span dangerouslySetInnerHTML={{__html: __val}}/>
+          </li>
         </React.Fragment>)
       })}
     </ul>
   </>)
+};
+
+//テーブル
+const SetTable = (props) => {
+  const _value = props.value;
+  const _tableData = _value.value;
+  return (<table className="table table-bordered">
+    <tbody>
+    {_tableData.map((__val, __index) => {
+      let __class = '';
+      if(__index == 0){
+        __class = 'table-title';
+      };
+      return (<React.Fragment key={__index}>
+        <tr className={__class}>
+          {__val.list.map((__val2, __index2) => {
+            return (<React.Fragment key={__index2}>
+              {(() => {
+                if(__index == 0){
+                  return (<th>
+                    <span dangerouslySetInnerHTML={{__html: __val2}}/>
+                  </th>)
+                }else{
+                  return (<td>
+                    <span dangerouslySetInnerHTML={{__html: __val2}}/>
+                  </td>)
+                };
+              })()}
+            </React.Fragment>)
+          })}
+        </tr>
+      </React.Fragment>)
+    })}
+    </tbody>
+  </table>)
 };
 
 const MainContents = (props) => {
@@ -40,16 +97,35 @@ const MainContents = (props) => {
                     value={__val2}
                   />
                 </React.Fragment>)
+              }else if(__val2.type == 'categoryTitle'){
+                return (<React.Fragment key={__index2}>
+                  <SetCategoryTitle 
+                    value={__val2}
+                  />
+                </React.Fragment>)
+              }else if(__val2.type == 'text'){
+                return (<React.Fragment key={__index2}>
+                  <SetText 
+                    value={__val2}
+                  />
+                </React.Fragment>)
               }else if(__val2.type == 'list'){
                 return (<React.Fragment key={__index2}>
                   <SetList 
                     value={__val2}
                   />
                 </React.Fragment>)
+              }else if(__val2.type == 'table'){
+                return (<React.Fragment key={__index2}>
+                  <SetTable 
+                    value={__val2}
+                  />
+                </React.Fragment>)
               }else{
-              
+                //指定以外は描画しない
+                return (<React.Fragment key={__index2}>
+                </React.Fragment>)
               };
-              
             })}
           </div>
           <div className="content-footer">
