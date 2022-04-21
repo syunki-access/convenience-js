@@ -2,6 +2,9 @@ import {
   useState, 
   useEffect 
 } from 'react';
+import { 
+  makeStyles,  
+} from '@material-ui/core/styles';
 import getData from 'lib/get_data';
 
 //各パーツ
@@ -9,6 +12,30 @@ import HeaderTitleText from './header_title_text';
 import ProfileList from './profile_list';
 import HeaderDescriptionText from './header_description_text';
 import MainContents from './main_contents';
+
+//文字装飾スタイル
+//ymlファイルにクラス名を定義すると使える
+const StylesObj = () => {
+  return {
+    'mainSec':{
+      '& .blackShadow':{
+        'text-shadow': '0.1em 0.1em 0.2em black',
+        color: '#FFFFFF',
+      },
+      '& .blackBordering':{
+        'text-shadow': '2px 2px 1px #666, -2px  2px 1px #666, 2px -2px 1px #666, -2px -2px 1px #666,  2px  0px 1px #666, 0px  2px 1px #666, -2px  0px 1px #666, 0px -2px 1px #666',
+        color: '#FFFFFF',
+        'letter-spacing': '0.1em',
+      },
+      '& .thick':{
+        'font-weight': 'bold',
+      },
+      '& .underline':{
+        'background': 'linear-gradient(transparent 30%, #ff8282 90%)',
+      },
+    },
+  }
+};
 
 const getContentsData = (props) => {
   const _getData = getData();
@@ -44,8 +71,15 @@ const MainPage = (props) => {
       //componentWillUnmount
     }
   }, []);
+  //スタイル適用
+  const useStyles = () => {
+    return makeStyles(
+      StylesObj()
+    )();
+  };
+  const classes = useStyles();
   //描画
-  return (<>
+  return (<div className={classes.mainSec}>
     <div className="main-box">
       <div className="main-text">
         <HeaderTitleText 
@@ -73,7 +107,7 @@ const MainPage = (props) => {
     <MainContents 
       mainList={main}
     />
-  </>)
+  </div>)
 };
 
 MainPage.defaultProps = {

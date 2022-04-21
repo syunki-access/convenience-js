@@ -5,7 +5,7 @@ const ProfileList = (props) => {
   return (<>
     <div id="profList" className="infobox gcard proflist">
       <div id="profListName" className="name">
-      <h3>{_proflist.name}</h3>
+        <h3 dangerouslySetInnerHTML={{__html: _proflist.name}}/>
       </div>
       <div id="profListImg">
         <img className="img-responsive prof-img" src={_proflist.profImg} />

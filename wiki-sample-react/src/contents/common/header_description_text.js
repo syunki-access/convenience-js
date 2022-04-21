@@ -2,7 +2,7 @@
 const HeaderDescriptionText = (props) => {
   return (<>
     <p id="descriptionText">
-      {props.descriptionText}
+      <span dangerouslySetInnerHTML={{__html: props.descriptionText}}/>
     </p>
   </>)
 };

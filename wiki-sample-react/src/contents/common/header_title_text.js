@@ -2,7 +2,7 @@
 const HeaderTitleText = (props) => {
   return (<>
     <h2 id="titleText" className="title-text notFoundTitle">
-      {props.titleText}
+      <span dangerouslySetInnerHTML={{__html: props.titleText}}/>
     </h2>
   </>)
 };
