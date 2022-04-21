@@ -234,19 +234,30 @@ function createContentsHTML(_args) {
         },
       });
       _.each(val.value, function(tableVal, tableIndex) {
+        var __trClass = '';
+        if(tableIndex == 0){
+          __trClass = 'table-title';
+        };
         us.temp({
           'type':'add',
           'tempSelector':'#tempTableTagTr',
           'addSelector':_addSelector+' .'+__tableId+' tbody',
           'model':{
-            'trClass':tableVal.trClass,
+            'trClass':__trClass,
             'trId':'tr'+tableIndex,
           },
         });
         _.each(tableVal.list, function(listVal, listIndex) {
+          var __tdTemplate = '#tempTableTagTd';
+          if(tableIndex == 0){
+            __tdTemplate = '#tempTableTagTh';
+          };
+          if(listVal == null){
+            listVal = '';
+          };
           us.temp({
             'type':'add',
-            'tempSelector':'#'+tableVal.tdTemplate,
+            'tempSelector':__tdTemplate,
             'addSelector':_addSelector+' .'+__tableId+' tbody .tr'+tableIndex,
             'model':{
               'value':Convenience.convertReturnToBrTag({ //改行変換
@@ -255,13 +266,6 @@ function createContentsHTML(_args) {
               'tdId':'td'+listIndex,
             },
           });
-          //属性変更対応 配列に存在するものだけ適用
-          if(tableVal.tdAttribute && tableVal.tdAttribute[listIndex]){
-            var __selector = _addSelector+' .'+__tableId+' tbody .tr'+tableIndex+' .td'+listIndex;
-            var __attr = tableVal.tdAttribute[listIndex].attr;
-            var __value = tableVal.tdAttribute[listIndex].value;
-            $(__selector).attr(__attr, __value);
-          }
         });
       });
     };
