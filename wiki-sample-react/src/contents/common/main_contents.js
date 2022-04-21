@@ -1,4 +1,5 @@
 import React from "react";
+import $ from 'jquery';
 
 //サブタイトル
 const SetSubTitle = (props) => {
@@ -81,6 +82,12 @@ const SetTable = (props) => {
   </table>)
 };
 
+//ページトップに戻るリンク制御
+const tapToTopLink = (props) => {
+  console.log('トップに戻るボタンタップしたよ', );
+  $('html,body').animate({ scrollTop:$('#header').offset().top-20 }, 'fast');
+};
+
 const MainContents = (props) => {
   const _list = props.mainList;
   return (<>
@@ -129,7 +136,7 @@ const MainContents = (props) => {
             })}
           </div>
           <div className="content-footer">
-            <span className="anker">▲ ページトップに戻る ▲</span>
+            <span className="anker" onClick={tapToTopLink}>▲ ページトップに戻る ▲</span>
           </div>
         </div>
       </React.Fragment>)
