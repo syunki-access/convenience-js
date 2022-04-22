@@ -1,4 +1,5 @@
 import React from "react";
+import ConvertHtml from "lib/convert_html";
 
 const CreateTd = (props) => {
   const _tdList = props.tdList;
@@ -7,13 +8,17 @@ const CreateTd = (props) => {
       return (<React.Fragment key={index}>
         {(() => {
           if(index == 0){ //最初のみ「th」
-            return (<>
-              <th dangerouslySetInnerHTML={{__html: val}}/>
-            </>)
+            return (<th>
+              <ConvertHtml 
+                text={val} 
+              />
+            </th>)
           }else{
-            return (<>
-              <td dangerouslySetInnerHTML={{__html: val}}/>
-            </>)
+            return (<td>
+              <ConvertHtml 
+                text={val} 
+              />
+            </td>)
           }
         })()}
       </React.Fragment>)

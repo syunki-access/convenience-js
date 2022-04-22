@@ -1,11 +1,16 @@
 import CreateSimpleTable from "./create_simple_table";
+import ConvertHtml from "lib/convert_html";
 
 const ProfileList = (props) => {
   const _proflist = props.proflist;
   return (<>
     <div id="profList" className="infobox gcard proflist">
       <div id="profListName" className="name">
-        <h3 dangerouslySetInnerHTML={{__html: _proflist.name}}/>
+        <h3>
+          <ConvertHtml 
+            text={_proflist.name} 
+          />
+        </h3>
       </div>
       <div id="profListImg">
         <img className="img-responsive prof-img" src={_proflist.profImg} />

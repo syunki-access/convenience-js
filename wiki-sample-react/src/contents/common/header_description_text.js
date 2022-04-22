@@ -1,8 +1,11 @@
+import ConvertHtml from "lib/convert_html";
 
 const HeaderDescriptionText = (props) => {
   return (<>
     <p id="descriptionText">
-      <span dangerouslySetInnerHTML={{__html: props.descriptionText}}/>
+      <ConvertHtml 
+        text={props.descriptionText} 
+      />
     </p>
   </>)
 };

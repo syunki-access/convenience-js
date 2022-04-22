@@ -1,8 +1,11 @@
+import ConvertHtml from "lib/convert_html";
 
 const HeaderTitleText = (props) => {
   return (<>
     <h2 id="titleText" className="title-text notFoundTitle">
-      <span dangerouslySetInnerHTML={{__html: props.titleText}}/>
+      <ConvertHtml 
+        text={props.titleText} 
+      />
     </h2>
   </>)
 };

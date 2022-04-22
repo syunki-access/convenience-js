@@ -1,12 +1,15 @@
 import React from "react";
 import $ from 'jquery';
+import ConvertHtml from "lib/convert_html";
 
 //サブタイトル
 const SetSubTitle = (props) => {
   const _text = props.value.value;
   return (<>
     <h3 className="subtitle-text">
-      <span dangerouslySetInnerHTML={{__html: _text}}/>
+      <ConvertHtml 
+        text={_text} 
+      />
     </h3>
   </>)
 };
@@ -16,7 +19,9 @@ const SetCategoryTitle = (props) => {
   const _text = props.value.value;
   return (<>
     <h4 className="categorye-text">
-      <span dangerouslySetInnerHTML={{__html: _text}}/>
+      <ConvertHtml 
+        text={_text} 
+      />
     </h4>
   </>)
 };
@@ -24,9 +29,11 @@ const SetCategoryTitle = (props) => {
 //テキスト
 const SetText = (props) => {
   const _text = props.value.value;
-  return (<>
-    <p dangerouslySetInnerHTML={{__html: _text}}/>
-  </>)
+  return (<p>
+    <ConvertHtml 
+      text={_text} 
+    />
+  </p>)
 };
 
 //リスト
@@ -39,7 +46,9 @@ const SetList = (props) => {
       {_list.map((__val, __index) => {
         return (<React.Fragment key={__index}>
           <li>
-            <span dangerouslySetInnerHTML={{__html: __val}}/>
+            <ConvertHtml 
+              text={__val} 
+            />
           </li>
         </React.Fragment>)
       })}
@@ -65,11 +74,15 @@ const SetTable = (props) => {
               {(() => {
                 if(__index == 0){
                   return (<th>
-                    <span dangerouslySetInnerHTML={{__html: __val2}}/>
+                    <ConvertHtml 
+                      text={__val2} 
+                    />
                   </th>)
                 }else{
                   return (<td>
-                    <span dangerouslySetInnerHTML={{__html: __val2}}/>
+                    <ConvertHtml 
+                      text={__val2} 
+                    />
                   </td>)
                 };
               })()}
