@@ -97,7 +97,6 @@ const SetTable = (props) => {
 
 //ページトップに戻るリンク制御
 const tapToTopLink = (props) => {
-  console.log('トップに戻るボタンタップしたよ', );
   $('html,body').animate({ scrollTop:$('#header').offset().top-20 }, 'fast');
 };
 
