@@ -1,0 +1,132 @@
+# ▼▼▼▼▼▼ ヘッダー用データ ▼▼▼▼▼▼
+header: 
+  titleText: 
+    いんでっくすページ
+  descriptionText: |-
+    ページリストを表示します。
+# ▲▲▲▲▲▲ ヘッダー用データ ▲▲▲▲▲▲
+
+# ▼▼▼▼▼▼ プロフィール用データ ▼▼▼▼▼▼
+proflist: 
+  name: 
+    いんでっくすページ
+  profImg: 
+    /img/pages/index/index.jpg
+# ▲▲▲▲▲▲ プロフィール用データ ▲▲▲▲▲▲
+
+# ▼▼▼▼▼▼ メイン用データ ▼▼▼▼▼▼
+main: 
+  - 
+    titleId: pageListSec
+    titleText: ページリスト
+    contents: 
+      - 
+        type: table
+        value: 
+          - 
+            list: 
+              - タイトル
+              - リンク
+          - 
+            list: 
+              - access (音楽ユニット)
+              - <a href='/access'>/access</a>
+# ▲▲▲▲▲▲ メイン用データ ▲▲▲▲▲▲
+
+# ▼▼▼▼▼▼ コンテンツサンプル ▼▼▼▼▼▼
+  - 
+    titleId: templateSec
+    titleText: テンプレートサンプル集
+    contents: 
+      - 
+        type: subTitle
+        value: サブタイトルサンプル
+      - 
+        type: categoryTitle
+        value: サブタイトルサンプル
+      - 
+        type: subTitle
+        value: テキストサンプル
+      - 
+        type: text
+        value: テキストサンプルです。テキストサンプルです。テキストサンプルです。テキストサンプルです。テキストサンプルです。<br>改行もできます。テキストサンプルです。テキストサンプルです。テキストサンプルです。
+      - 
+        type: text
+        value: テキストサンプルです。テキストサンプルです。テキストサンプルです。テキストサンプルです。テキストサンプルです。<br>改行もできます。テキストサンプルです。テキストサンプルです。テキストサンプルです。
+      - 
+        type: subTitle
+        value: リストサンプル
+      - 
+        type: list
+        listClass: other-link
+        value: 
+          - リストサンプルです。
+          - リストサンプルです。
+          - リストサンプルです。
+          - <a href='https://www.google.co.jp/' target='blank'>リストサンプルリンク</a>
+      - 
+        type: list
+        listClass: fanclub-link
+        value: 
+          - リストサンプルです。
+          - リストサンプルです。
+          - リストサンプルです。
+          - <a href='https://www.google.co.jp/' target='blank'>リストサンプルリンク</a>
+      - 
+        type: list
+        listClass: solo-link
+        value: 
+          - リストサンプルです。
+          - リストサンプルです。
+          - リストサンプルです。
+          - <a href='https://www.google.co.jp/' target='blank'>リストサンプルリンク</a>
+      - 
+        type: subTitle
+        value: テーブルサンプル
+      - 
+        type: table
+        value: 
+          - 
+            list: 
+              - タイトル1
+              - タイトル2
+              - タイトル3
+              - タイトル4
+              - タイトル5
+          - 
+            list: 
+              - コンテンツ1
+              - コンテンツ2
+              - コンテンツ3
+              - コンテンツ4
+              - コンテンツ5
+          - 
+            list: 
+              - コンテンツ1
+              - コンテンツ2
+              - コンテンツ3
+              - コンテンツ4
+              - コンテンツ5
+          - 
+            list: 
+              - コンテンツ1
+              - コンテンツ2
+              - コンテンツ3
+              - コンテンツ4
+              - コンテンツ5
+          - 
+            list: 
+              - コンテンツ1
+              - コンテンツ2
+              - コンテンツ3
+              - コンテンツ4
+              - コンテンツ5
+          - 
+            list: 
+              - コンテンツ1
+              - コンテンツ2
+              - コンテンツ3
+              - コンテンツ4
+              - コンテンツ5
+# ▲▲▲▲▲▲ コンテンツサンプル ▲▲▲▲▲▲
+

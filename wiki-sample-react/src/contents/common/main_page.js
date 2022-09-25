@@ -82,7 +82,7 @@ const MainPage = (props) => {
 };
 
 MainPage.defaultProps = {
-  url:'/yml/data_not_found.yml', //not_found用
+  url:'/yml/common/data_not_found.yml', //not_found用
 };
 
 export default MainPage;

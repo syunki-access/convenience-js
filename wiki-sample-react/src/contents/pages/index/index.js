@@ -1,11 +1,11 @@
 import MainPage from "contents/common/main_page";
 
-const Access = (props) => {
+const Index = (props) => {
   return (<>
     <MainPage 
-      url="/yml/pages/data_access.yml" 
+      url="/yml/common/data_index.yml" 
     />
   </>)
 };
 
-export default Access;
+export default Index;

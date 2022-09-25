@@ -13,7 +13,7 @@ proflist:
   name: 
     HTTP 404
   profImg: 
-    /img/internet_404_page_not_found_j.png
+    /img/common/internet_404_page_not_found_j.png
   list: 
     - 
       - |-

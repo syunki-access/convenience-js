@@ -32,6 +32,9 @@ const CreateSimpleTable = (props) => {
     <table className="tableProfListDescription">
       <tbody>
         {_tableData.map((val, index) => {
+          if(!val){
+            val = [];
+          };
           return (<React.Fragment key={index}>
             <tr>
               <CreateTd 
