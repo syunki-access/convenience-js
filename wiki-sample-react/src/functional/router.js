@@ -5,16 +5,21 @@ import {
   Routes 
 } from 'react-router-dom';
 
-// ページ用インポート
+// 共通ページ用インポート
 import 
   Index
 from '../contents/pages/index/index';
 import 
+  NotFound
+from '../contents/pages/not_found/index';
+
+// 各ページ用インポート
+import 
   Access
 from '../contents/pages/access/index';
 import 
-  NotFound
-from '../contents/pages/not_found/index';
+  Zyyg
+from '../contents/pages/zyyg/index';
 
 // ルーター設定
 const Router = (props) => {
@@ -27,6 +32,10 @@ const Router = (props) => {
       <Route 
         path="/access" 
         element={<Access />} 
+      />
+      <Route 
+        path="/zyyg" 
+        element={<Zyyg />} 
       />
       <Route 
         path="*" 
