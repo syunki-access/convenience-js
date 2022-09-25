@@ -4,8 +4,8 @@ import {
   Link, 
   Routes 
 } from 'react-router-dom';
-import Access from '../contents/access/index';
-import NotFound from '../contents/not_found/index';
+import Access from '../contents/pages/access/index';
+import NotFound from '../contents/pages/not_found/index';
 
 const Router = (props) => {
   return (<BrowserRouter>
