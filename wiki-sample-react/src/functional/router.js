@@ -20,6 +20,9 @@ from '../contents/pages/access/index';
 import 
   Zyyg
 from '../contents/pages/zyyg/index';
+import 
+  ReactHooksTest
+from '../contents/pages/ReactHooksTest/index';
 
 // ルーター設定
 const Router = (props) => {
@@ -36,6 +39,10 @@ const Router = (props) => {
       <Route 
         path="/zyyg" 
         element={<Zyyg />} 
+      />
+      <Route 
+        path="/ReactHooksTest" 
+        element={<ReactHooksTest />} 
       />
       <Route 
         path="*" 
