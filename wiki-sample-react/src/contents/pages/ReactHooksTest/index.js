@@ -1,7 +1,8 @@
-import { createContext, useEffect, useRef, useState } from "react";
+import { createContext, useEffect, useReducer, useRef, useState } from "react";
 import UseContextTest01 from "./useContextTest01";
+import { type } from "@testing-library/user-event/dist/type";
 
-// useContextのテスト用データ
+//useContextのテスト用データ
 let propsDataOrg = {
   name: 'あいうえお',
   data1: 'カキクケコ',
@@ -11,8 +12,20 @@ let propsDataOrg = {
     console.log('元handleClickです');
   },
 }
-// createContextで定義しておく
+//createContextで定義しておく
 export const PropsDataContext = createContext(propsDataOrg);
+
+//useReducer用の関数
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'plus':
+      return state + 1;
+    case 'minus':
+      return state - 1;
+    default:
+      return state;
+  }
+};
 
 const ReactHooksTest = (props) => {
   //let count = 0;
@@ -27,7 +40,7 @@ const ReactHooksTest = (props) => {
     };
     setCount(_count);
     console.log('count', _count);
-    // useContext用データも更新
+    //useContext用データも更新
     propsDataOrg.count = _count;
     console.log('propsData.count', propsDataOrg.count);
   };
@@ -39,12 +52,20 @@ const ReactHooksTest = (props) => {
     propsDataOrg.handleClick = handleClick;
   }, []);
 
-  // useRefを定義しておくことでjqueryのセレクタみたくいろんな値を参照することができる
+  //useRefを定義しておくことでjqueryのセレクタみたくいろんな値を参照することができる
   const inputText = useRef();
   const handleRef = () => {
     console.log('inputText', inputText);
     console.log('inputText.current.value', inputText.current.value);
   };
+
+  //useReducerサンプル
+  //やってることは↑の「handleClick」と変わらない
+  //こういう書き方もできることを覚えておけば大丈夫
+  const [state, dispatch] = useReducer(
+    reducer,
+    0
+  )
 
   return (<>
     <h1>ReactHooksのお勉強</h1>
@@ -65,6 +86,16 @@ const ReactHooksTest = (props) => {
     <h2>useRef</h2>
     <input type="text" ref={inputText} />
     <button onClick={handleRef}>UseRef</button>
+
+    <hr/>
+    <h2>useReducer</h2>
+    <p>カウント：{state}</p>
+    <button onClick={() => dispatch({
+      type: 'plus'
+    })}>＋:プラス</button>
+    <button onClick={() => dispatch({
+      type: 'minus'
+    })}>＋:マイナス</button>
   </>)
 };
 
