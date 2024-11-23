@@ -2,6 +2,9 @@ import { createContext, useEffect, useReducer, useRef, useState } from "react";
 import UseContextTest01 from "./useContextTest01";
 import { type } from "@testing-library/user-event/dist/type";
 
+//スタイル呼び出し
+import "./index.scss";
+
 //useContextのテスト用データ
 let propsDataOrg = {
   name: 'あいうえお',
@@ -67,9 +70,20 @@ const ReactHooksTest = (props) => {
     0
   )
 
-  return (<>
-    <h1>ReactHooksのお勉強</h1>
+  //タイトル色変更
+  const mainTitle = useRef();
+  const changeTitleColor = (_args) => {
+    mainTitle.current.className = 'title ' + _args;
+  };
 
+  return (<div className="main">
+    <h1 className="title" ref={mainTitle}>ReactHooksのお勉強</h1>
+    <hr/>
+    <h2>タイトル色変更</h2>
+    <button onClick={() => changeTitleColor('black')}>black</button>
+    <button onClick={() => changeTitleColor('red')}>red</button>
+    <button onClick={() => changeTitleColor('burlywood')}>burlywood</button>
+    <button onClick={() => changeTitleColor('')}>元に戻す</button>
     <hr/>
     <h2>useState・useEffect</h2>
     <button onClick={() => handleClick('plus')}>＋</button>
@@ -96,7 +110,7 @@ const ReactHooksTest = (props) => {
     <button onClick={() => dispatch({
       type: 'minus'
     })}>＋:マイナス</button>
-  </>)
+  </div>)
 };
 
 export default ReactHooksTest;

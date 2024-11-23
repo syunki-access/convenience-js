@@ -1,0 +1,16 @@
+.main {
+  h1 {
+    &.title {
+      color: brown;
+      &.black {
+        color: black;
+      }
+      &.red {
+        color: red;
+      }
+      &.burlywood {
+        color: burlywood;
+      }
+    }
+  }
+}
