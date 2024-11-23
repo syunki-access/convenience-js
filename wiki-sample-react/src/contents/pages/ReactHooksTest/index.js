@@ -76,6 +76,52 @@ const ReactHooksTest = (props) => {
     mainTitle.current.className = 'title ' + _args;
   };
 
+  //リストサンプル
+  const [listData, setListData] = useState([
+    {
+      id: 1,
+      text: 'あいうえお',
+    },
+    {
+      id: 2,
+      text: 'かきくけこ',
+    },
+    {
+      id: 3,
+      text: 'さしすせそ',
+    },
+    {
+      id: 4,
+      text: 'なにぬねの',
+    },
+    {
+      id: 5,
+      text: 'はひふへほ',
+    },
+  ])
+  const listMainRef = useRef();
+  const changeNextList = () => {
+    //liのclassを元に戻す
+    listData.map((value, index) => {
+      listMainRef.current.children[index].className = 'list';
+    });
+    let _list = [];
+    listData.map((value, index) => {
+      _list.push(
+        {
+          id: value.id+1,
+          text: value.text+(value.id+1)
+        }
+      )
+    });
+    setListData(_list);
+  };
+  const changeBg = (e) => {
+    //console.log('target', e.target);
+    //背景色変更
+    e.target.className = e.target.className + ' bgSet';
+  };
+
   return (<div className="main">
     <h1 className="title" ref={mainTitle}>ReactHooksのお勉強</h1>
     <hr/>
@@ -110,6 +156,19 @@ const ReactHooksTest = (props) => {
     <button onClick={() => dispatch({
       type: 'minus'
     })}>＋:マイナス</button>
+
+    <hr/>
+    <h2>リストサンプル</h2>
+    <ul className="listMain" ref={listMainRef}>
+      {
+        listData.map((value, index) => {
+          return (<div key={value.id} className="list" onClick={(e) => changeBg(e)}>
+            <li>{value.id}:{value.text}</li>
+          </div>);
+        })
+      }
+    </ul>
+    <button onClick={() => changeNextList()}>次のリストへ</button>
   </div>)
 };
 
