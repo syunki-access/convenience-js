@@ -118,8 +118,10 @@ const ReactHooksTest = (props) => {
   };
   const changeBg = (e) => {
     //console.log('target', e.target);
+    //console.log('currentTarget', e.currentTarget);
+    //クリックイベントを記述してある場所は【 currentTarget 】で取得
     //背景色変更
-    e.target.className = e.target.className + ' bgSet';
+    e.currentTarget.className = e.currentTarget.className + ' bgSet';
   };
 
   return (<div className="main">

@@ -22,10 +22,6 @@
       &.bgSet {
         background-color: bisque;
       }
-      li {
-        //中のイベントは拾わない
-        pointer-events: none;
-      }
     }
   }
 }
